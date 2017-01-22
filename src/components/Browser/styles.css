@@ -1,0 +1,11 @@
+.Browser {
+  flex: 1;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+
+.Browser-grid {
+  flex: 1;
+  display: flex;
+}

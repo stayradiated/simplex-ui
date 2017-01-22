@@ -1,0 +1,73 @@
+.AlbumPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.AlbumPanelHeader {
+  flex: 1;
+  display: flex;
+}
+
+.AlbumPanelHeader-image {
+  width: 200px;
+}
+
+.AlbumPanelHeader-text {
+  flex: 1;
+  color: #fff;
+  font-size: 2em;
+  padding: 0.5em;
+}
+
+.AlbumPanelHeader-title {
+  color: #fff;
+  font-size: 1em;
+}
+
+.AlbumPanelHeader-artist {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9em;
+}
+
+.AlbumPanelHeader-year {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9em;
+}
+
+.AlbumPanelTracks {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.AlbumPanelTracks-list {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.AlbumPanelTracks-track {
+  display: flex;
+  list-style-type: none;
+  color: #fff;
+  line-height: 1.5em;
+  padding: 0 1em;
+}
+
+.AlbumPanelTracks-index {
+  width: 30px;
+}
+
+.AlbumPanelTracks-title {
+  flex: 1;
+}
+
+.AlbumPanelTracks-duration {
+  width: 80px;
+}
+
+.AlbumPanelTracks-rating {
+  width: 20px;
+}

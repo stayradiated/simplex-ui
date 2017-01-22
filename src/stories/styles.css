@@ -1,0 +1,17 @@
+.StoryBook-Wrapper {
+  position: absolute;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #0A0908;
+}
+
+body, button {
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  font-size: 16px;
+}

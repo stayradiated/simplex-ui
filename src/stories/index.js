@@ -1,17 +1,38 @@
-import React from 'react';
-import { storiesOf, action, linkTo } from '@kadira/storybook';
-import Button from './Button';
-import Welcome from './Welcome';
+import React from 'react'
+import {storiesOf} from '@kadira/storybook'
 
-storiesOf('Welcome', module)
-  .add('to Storybook', () => (
-    <Welcome showApp={linkTo('Button')}/>
-  ));
+import Wrapper from './Wrapper'
 
-storiesOf('Button', module)
-  .add('with text', () => (
-    <Button onClick={action('clicked')}>Hello Button</Button>
+import AlbumGrid from '../components/AlbumGrid'
+import AlbumPanel from '../components/AlbumPanel'
+import GridHeader from '../components/GridHeader'
+import Browser from '../components/Browser'
+
+import albums from '../../plexdata.json'
+
+storiesOf('Header', module)
+  .addDecorator(Wrapper)
+  .add('for Albums', () => (
+    <GridHeader
+      sections={['Playlists', 'Artists', 'Albums', 'Tracks']}
+      currentSection='Albums'
+    />
   ))
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
-  ));
+
+storiesOf('Grid', module)
+  .addDecorator(Wrapper)
+  .add('of Albums', () => (
+    <AlbumGrid size={200} items={albums} />
+  ))
+
+storiesOf('Panel', module)
+  .addDecorator(Wrapper)
+  .add('Album', () => (
+    <AlbumPanel album={albums[0]} />
+  ))
+
+storiesOf('Browser', module)
+  .addDecorator(Wrapper)
+  .add('Albums', () => (
+    <Browser albums={albums} />
+  ))
