@@ -4,25 +4,21 @@ import classNames from 'classnames'
 import './styles.css'
 
 export default function SquareImage (props) {
-  const {className, src, size, alt} = props
+  const {className, src} = props
 
   return (
     <div className={classNames(className, 'SquareImage')}>
-      <div className='SquareImage-container'>
-        <img
-          alt={alt}
-          className='SquareImage-image'
-          src={src}
-          width={size}
-          height={size}
-        />
-      </div>
+      <div
+        className='SquareImage-container'
+        style={{
+          backgroundImage: `url(${src})`,
+        }}
+      />
     </div>
   )
 }
 
 SquareImage.propTypes = {
-  alt: PropTypes.string.isRequired,
   className: PropTypes.string,
   size: PropTypes.number.isRequired,
   src: PropTypes.string,
