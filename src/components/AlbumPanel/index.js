@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react'
+import classNames from 'classnames'
 
 import './styles.css'
 
@@ -6,10 +7,10 @@ import AlbumPanelHeader from './Header'
 import AlbumPanelTracks from './Tracks'
 
 export default function AlbumPanel (props) {
-  const {album} = props
+  const {className, album} = props
 
   return (
-    <div className='AlbumPanel'>
+    <div className={classNames(className, 'AlbumPanel')}>
       <AlbumPanelHeader album={album} />
       <AlbumPanelTracks tracks={album.tracks} />
     </div>
@@ -17,6 +18,7 @@ export default function AlbumPanel (props) {
 }
 
 AlbumPanel.propTypes = {
+  className: PropTypes.string,
   album: PropTypes.shape({
     tracks: PropTypes.arrayOf(PropTypes.object),
   }).isRequired,

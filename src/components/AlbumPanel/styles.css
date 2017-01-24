@@ -6,34 +6,38 @@
 }
 
 .AlbumPanelHeader {
-  flex: 1;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  position: relative;
 }
 
 .AlbumPanelHeader-image {
-  width: 200px;
+  width: 150px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  margin-right: 1em;
 }
 
 .AlbumPanelHeader-text {
-  flex: 1;
   color: #fff;
-  font-size: 2em;
+  font-size: 1.1em;
+  line-height: 1.5em;
   padding: 0.5em;
+  z-index: 1;
 }
 
 .AlbumPanelHeader-title {
   color: #fff;
-  font-size: 1em;
 }
 
 .AlbumPanelHeader-artist {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .AlbumPanelHeader-year {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .AlbumPanelTracks {
@@ -52,12 +56,15 @@
   display: flex;
   list-style-type: none;
   color: #fff;
-  line-height: 1.5em;
   padding: 0 1em;
+  line-height: 3em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .AlbumPanelTracks-index {
   width: 30px;
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .AlbumPanelTracks-title {
@@ -65,9 +72,20 @@
 }
 
 .AlbumPanelTracks-duration {
-  width: 80px;
+  width: 40px;
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: right;
 }
 
 .AlbumPanelTracks-rating {
-  width: 20px;
+  width: 40px;
+}
+
+.AlbumPanelTracks-info {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8em;
+  line-height: 3em;
+  margin: 0;
 }

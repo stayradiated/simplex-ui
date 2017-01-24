@@ -2,10 +2,19 @@
   flex: 1;
   display: flex;
   position: relative;
-  flex-direction: column;
 }
 
 .Browser-grid {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.Browser-grid-wrapper {
   flex: 1;
   display: flex;
+}
+
+.Browser-selected-panel {
+  flex: 2;
 }

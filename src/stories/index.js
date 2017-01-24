@@ -25,10 +25,16 @@ storiesOf('Grid', module)
     <AlbumGrid size={200} items={albums} />
   ))
 
-storiesOf('Panel', module)
+storiesOf('AlbumPanel', module)
   .addDecorator(Wrapper)
-  .add('Album', () => (
+  .add('Starboy', () => (
     <AlbumPanel album={albums[0]} />
+  ))
+  .add('Chairlift', () => (
+    <AlbumPanel album={albums[2]} />
+  ))
+  .add('Slow Gum', () => (
+    <AlbumPanel album={albums[21]} />
   ))
 
 storiesOf('Browser', module)

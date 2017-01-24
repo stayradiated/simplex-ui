@@ -1,0 +1,15 @@
+.RatingBars {
+  display: flex;
+  align-items: center;
+}
+
+.RatingBars-bar {
+  float: left;
+  height: 10px;
+  margin-right: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.RatingBars-bar-active {
+  background: rgba(255, 255, 255, 0.9);
+}

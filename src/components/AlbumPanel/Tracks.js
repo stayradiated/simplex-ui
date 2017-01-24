@@ -1,5 +1,8 @@
 import React, {PropTypes} from 'react'
 
+import Time from '../Time'
+import RatingBars from '../RatingBars'
+
 export default function AlbumPanelTracks (props) {
   const {tracks} = props
 
@@ -17,12 +20,24 @@ export default function AlbumPanelTracks (props) {
           >
             <span className='AlbumPanelTracks-index'>{track.index}</span>
             <span className='AlbumPanelTracks-title'>{track.title}</span>
-            <span className='AlbumPanelTracks-duration'>{track.duration}</span>
-            <span className='AlbumPanelTracks-rating'>{track.userRating}</span>
+            <RatingBars
+              className='AlbumPanelTracks-rating'
+              value={track.userRating}
+              maxValue={10}
+            />
+            <Time
+              className='AlbumPanelTracks-duration'
+              value={track.duration}
+            />
           </li>
         ))}
       </ul>
-      <p>{tracks.length} tracks. Total length: {totalDuration}</p>
+      <p className='AlbumPanelTracks-info'>
+        Tracks: {tracks.length}, Total Time: <Time
+          value={totalDuration}
+          format='h [h] m [min] ss [sec]'
+        />
+      </p>
     </div>
   )
 }

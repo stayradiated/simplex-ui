@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react'
 
+import BlurImage from '../BlurImage'
 import SquareImage from '../SquareImage'
 
 export default function AlbumPanelHeader (props) {
@@ -7,11 +8,12 @@ export default function AlbumPanelHeader (props) {
 
   return (
     <div className='AlbumPanelHeader'>
+      <BlurImage src={album.thumb} />
       <SquareImage
         className='AlbumPanelHeader-image'
         src={album.thumb}
         alt={album.title}
-        size={200}
+        size={150}
       />
       <div className='AlbumPanelHeader-text'>
         <div className='AlbumPanelHeader-title'>{album.title}</div>
