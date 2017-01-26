@@ -31,8 +31,8 @@ export default function RatingBars (props) {
 
 RatingBars.propTypes = {
   className: PropTypes.string,
-  value: PropTypes.number.isRequired,
-  maxValue: PropTypes.number.isRequired,
+  value: PropTypes.number,
+  maxValue: PropTypes.number,
 }
 
 RatingBars.defaultProps = {

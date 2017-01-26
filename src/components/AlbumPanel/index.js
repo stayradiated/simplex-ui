@@ -1,25 +1,34 @@
 import React, {PropTypes} from 'react'
-import classNames from 'classnames'
 
-import './styles.css'
-
-import AlbumPanelHeader from './Header'
-import AlbumPanelTracks from './Tracks'
+import Panel from '../Panel'
+import PanelHeader from '../Panel/Header'
+import TrackList from '../TrackList'
 
 export default function AlbumPanel (props) {
-  const {className, album} = props
+  const {album, ...otherProps} = props
+
+  const header = (
+    <PanelHeader
+      thumb={album.thumb}
+      title={album.title}
+      subtitle={album.parentTitle}
+      meta={album.year.toString()}
+    />
+  )
 
   return (
-    <div className={classNames(className, 'AlbumPanel')}>
-      <AlbumPanelHeader album={album} />
-      <AlbumPanelTracks tracks={album.tracks} />
-    </div>
+    <Panel {...otherProps} header={header}>
+      <TrackList tracks={album.tracks} />
+    </Panel>
   )
 }
 
 AlbumPanel.propTypes = {
-  className: PropTypes.string,
   album: PropTypes.shape({
+    thumb: PropTypes.string,
+    title: PropTypes.string,
+    parentTitle: PropTypes.string,
+    pear: PropTypes.number,
     tracks: PropTypes.arrayOf(PropTypes.object),
   }).isRequired,
 }
