@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react'
 
+import TrackList from '../TrackList'
 import Time from '../Time'
-import RatingBars from '../RatingBars'
 
 export default function AlbumPanelTracks (props) {
   const {tracks} = props
@@ -12,26 +12,7 @@ export default function AlbumPanelTracks (props) {
 
   return (
     <div className='AlbumPanelTracks'>
-      <ul className='AlbumPanelTracks-list'>
-        {tracks.map((track, key) => (
-          <li
-            key={key}
-            className='AlbumPanelTracks-track'
-          >
-            <span className='AlbumPanelTracks-index'>{track.index}</span>
-            <span className='AlbumPanelTracks-title'>{track.title}</span>
-            <RatingBars
-              className='AlbumPanelTracks-rating'
-              value={track.userRating}
-              maxValue={10}
-            />
-            <Time
-              className='AlbumPanelTracks-duration'
-              value={track.duration}
-            />
-          </li>
-        ))}
-      </ul>
+      <TrackList tracks={tracks} />
       <p className='AlbumPanelTracks-info'>
         Tracks: {tracks.length}, Total Time: <Time
           value={totalDuration}

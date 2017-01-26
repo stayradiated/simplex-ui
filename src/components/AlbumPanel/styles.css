@@ -46,42 +46,6 @@
   flex-direction: column;
 }
 
-.AlbumPanelTracks-list {
-  flex: 1;
-  margin: 0;
-  padding: 0;
-}
-
-.AlbumPanelTracks-track {
-  display: flex;
-  list-style-type: none;
-  color: #fff;
-  padding: 0 1em;
-  line-height: 3em;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.AlbumPanelTracks-index {
-  width: 30px;
-  font-size: 0.8em;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.AlbumPanelTracks-title {
-  flex: 1;
-}
-
-.AlbumPanelTracks-duration {
-  width: 40px;
-  font-size: 0.8em;
-  color: rgba(255, 255, 255, 0.5);
-  text-align: right;
-}
-
-.AlbumPanelTracks-rating {
-  width: 40px;
-}
-
 .AlbumPanelTracks-info {
   text-align: center;
   color: rgba(255, 255, 255, 0.5);
