@@ -45,11 +45,3 @@
   display: flex;
   flex-direction: column;
 }
-
-.AlbumPanelTracks-info {
-  text-align: center;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.8em;
-  line-height: 3em;
-  margin: 0;
-}

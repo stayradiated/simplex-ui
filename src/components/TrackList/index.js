@@ -4,11 +4,22 @@ import {AutoSizer, List} from 'react-virtualized'
 import './styles.css'
 
 import TrackListItem from './Item'
+import TrackListSummary from './Summary'
 
 export default function TrackList (props) {
   const {tracks} = props
 
   const renderTrack = ({index, style}) => {
+    if (index === tracks.length) {
+      return (
+        <TrackListSummary
+          key={index}
+          tracks={tracks}
+          style={style}
+        />
+      )
+    }
+
     const track = tracks[index]
     return (
       <TrackListItem
@@ -30,7 +41,7 @@ export default function TrackList (props) {
         <List
           width={width}
           height={height}
-          rowCount={tracks.length}
+          rowCount={tracks.length + 1}
           rowHeight={40}
           rowRenderer={renderTrack}
           style={{

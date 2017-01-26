@@ -1,5 +1,7 @@
 import React, {PropTypes} from 'react'
 
+import './Item.css'
+
 import Time from '../Time'
 import RatingBars from '../RatingBars'
 
@@ -7,7 +9,7 @@ export default function TrackListItem (props) {
   const {track, style} = props
 
   return (
-    <div className='TrackListItem-track' style={style}>
+    <div className='TrackListItem' style={style}>
       <span className='TrackListItem-index'>{track.index}</span>
       <span className='TrackListItem-title'>{track.title}</span>
       <RatingBars
