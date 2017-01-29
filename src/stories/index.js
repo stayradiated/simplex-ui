@@ -1,12 +1,10 @@
 import React from 'react'
-import {storiesOf} from '@kadira/storybook'
+import {storiesOf, action} from '@kadira/storybook'
 
 import Wrapper from './Wrapper'
 
-import AlbumGrid from '../components/AlbumGrid'
-import ArtistGrid from '../components/ArtistGrid'
-import AlbumPanel from '../components/AlbumPanel'
-import ArtistPanel from '../components/ArtistPanel'
+import TypedGrid from '../components/TypedGrid'
+import TypedPanel from '../components/TypedPanel'
 import GridHeader from '../components/GridHeader'
 import Browser from '../components/Browser'
 
@@ -19,35 +17,48 @@ storiesOf('Header', module)
     <GridHeader
       sections={['Playlists', 'Artists', 'Albums', 'Tracks']}
       currentSection='Albums'
+      onChange={action('Change Section')}
     />
   ))
   .add('for Artists', () => (
     <GridHeader
       sections={['Playlists', 'Artists', 'Albums', 'Tracks']}
       currentSection='Artists'
+      onChange={action('Change Section')}
     />
   ))
 
 storiesOf('Grid', module)
   .addDecorator(Wrapper)
   .add('of Albums', () => (
-    <AlbumGrid size={200} items={albums} />
+    <TypedGrid size={200} items={albums} />
   ))
   .add('of Artists', () => (
-    <ArtistGrid size={200} items={artists} />
+    <TypedGrid size={200} items={artists} />
   ))
 
 storiesOf('Panel', module)
   .addDecorator(Wrapper)
   .add('Album', () => (
-    <AlbumPanel album={albums[0]} />
+    <TypedPanel
+      item={albums[0]}
+      onClose={action('Close Panel')}
+    />
   ))
   .add('Artist', () => (
-    <ArtistPanel artist={artists[0]} />
+    <TypedPanel
+      item={artists[0]}
+      onClose={action('Close Panel')}
+    />
   ))
 
 storiesOf('Browser', module)
   .addDecorator(Wrapper)
-  .add('Albums', () => (
-    <Browser albums={albums} />
+  .add('Albums & Artists', () => (
+    <Browser
+      sections={{
+        Albums: albums,
+        Artists: artists,
+      }}
+    />
   ))

@@ -6,23 +6,24 @@ import './styles.css'
 import Icon from '../Icon'
 
 export default function GridHeader (props) {
-  const {sections, currentSection} = props
+  const {sections, currentSection, onChange} = props
 
   return (
     <header className='GridHeader'>
-      <ul className='GridHeader-section-list'>
+      <nav className='GridHeader-section-list'>
         {sections.map((section, key) => (
-          <li
+          <button
             key={key}
             className={classNames({
               'GridHeader-section-item': true,
               'GridHeader-section-item-selected': section === currentSection,
             })}
+            onClick={() => onChange && onChange(section)}
           >
             {section}
-          </li>
+          </button>
         ))}
-      </ul>
+      </nav>
       <button className='GridHeader-dropdown-button'>
         Sort:
         <span className='GridHeader-dropdown-label'>
@@ -37,4 +38,5 @@ export default function GridHeader (props) {
 GridHeader.propTypes = {
   sections: PropTypes.arrayOf(PropTypes.string).isRequired,
   currentSection: PropTypes.string,
+  onChange: PropTypes.func,
 }

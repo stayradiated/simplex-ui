@@ -3,12 +3,14 @@ import classNames from 'classnames'
 
 import './styles.css'
 
+import PanelHeader from './Header'
+
 export default function Panel (props) {
-  const {header, children, className} = props
+  const {details, children, className, onClose} = props
 
   return (
     <div className={classNames(className, 'Panel')}>
-      {header}
+      <PanelHeader {...details} onClose={onClose} />
       <div className='Panel-content'>
         {children}
       </div>
@@ -18,6 +20,12 @@ export default function Panel (props) {
 
 Panel.propTypes = {
   children: PropTypes.node,
-  header: PropTypes.node,
+  details: PropTypes.shape({
+    thumb: PropTypes.string,
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
+    meta: PropTypes.string,
+  }).isRequired,
   className: PropTypes.string,
+  onClose: PropTypes.func,
 }

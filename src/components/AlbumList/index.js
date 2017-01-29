@@ -2,17 +2,31 @@ import React, {PropTypes} from 'react'
 
 import './styles.css'
 
-import AlbumListItem from './Item'
+import ItemsList from '../List'
+import AlbumListHeader from './Header'
+import TrackListItem from '../TrackList/Item'
+import TrackListSummary from '../TrackList/Summary'
 
 export default function AlbumList (props) {
   const {albums} = props
 
+  const items = albums
+    .map((album) => [
+      <AlbumListHeader album={album} />,
+      ...album.tracks.map((track) => <TrackListItem track={track} />),
+    ])
+    .reduce((acc, tracks) => acc.concat(tracks), [])
+
+  const allTracks = albums
+    .map((album) => album.tracks)
+    .reduce((acc, tracks) => acc.concat(tracks), [])
+
+  items.push(
+    <TrackListSummary tracks={allTracks} />
+  )
+
   return (
-    <div className='AlbumList'>
-      {albums.map((album, index) => (
-        <AlbumListItem key={index} album={album} />
-      ))}
-    </div>
+    <ItemsList items={items} />
   )
 }
 

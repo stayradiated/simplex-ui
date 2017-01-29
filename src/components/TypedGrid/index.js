@@ -1,30 +1,30 @@
 import React, {PropTypes} from 'react'
 
-import AlbumItem from '../AlbumItem'
+import TypedGridItem from '../TypedGridItem'
 import Grid from '../Grid/AutoSize'
 import withState from '../Grid/withState'
 import withRouter from '../Grid/withRouter'
 
-export default function AlbumGrid (props) {
+export default function TypedGrid (props) {
   const {size, onChange, ...otherProps} = props
 
   return (
     <Grid {...otherProps} itemHeight={size + 60} itemWidth={size}>
-      {(album) => (
-        <AlbumItem
+      {(item) => (
+        <TypedGridItem
           size={size - 10}
-          album={album}
-          onSelect={() => onChange && onChange(album)}
+          item={item}
+          onSelect={() => onChange && onChange(item)}
         />
       )}
     </Grid>
   )
 }
 
-AlbumGrid.propTypes = {
+TypedGrid.propTypes = {
   size: PropTypes.number.isRequired,
   onChange: PropTypes.func,
 }
 
-AlbumGrid.withState = withState(AlbumGrid)
-AlbumGrid.withRouter = withRouter(AlbumGrid)
+TypedGrid.withState = withState(TypedGrid)
+TypedGrid.withRouter = withRouter(TypedGrid)

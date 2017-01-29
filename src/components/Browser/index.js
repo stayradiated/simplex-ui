@@ -1,36 +1,49 @@
 import React, {PropTypes} from 'react'
+import compose from 'recompose/compose'
 import withState from 'recompose/withState'
 
 import './styles.css'
 
-import AlbumGrid from '../AlbumGrid'
-import AlbumPanel from '../AlbumPanel'
+import TypedGrid from '../TypedGrid'
+import TypedPanel from '../TypedPanel'
 import GridHeader from '../GridHeader'
 
 function Browser (props) {
-  const {album, albums, setAlbum} = props
+  const {sections, item, setItem, section, setSection} = props
+
+  const items = sections[section]
 
   return (
     <div className='Browser'>
       <div className='Browser-grid'>
         <GridHeader
-          sections={['Playlists', 'Artists', 'Albums', 'Tracks']}
-          currentSection='Albums'
+          sections={Object.keys(sections)}
+          currentSection={section}
+          onChange={setSection}
         />
         <div className='Browser-grid-wrapper'>
-          <AlbumGrid size={150} items={albums} onChange={setAlbum} />
+          <TypedGrid size={150} items={items} onChange={setItem} />
         </div>
       </div>
-      {album &&
-        <AlbumPanel className='Browser-selected-panel' album={album} />}
+      {item &&
+        <TypedPanel
+          className='Browser-selected-panel'
+          item={item}
+          onClose={() => setItem(null)}
+        />}
     </div>
   )
 }
 
 Browser.propTypes = {
-  album: PropTypes.shape({}),
-  albums: PropTypes.arrayOf(PropTypes.object).isRequired,
-  setAlbum: PropTypes.func.isRequired,
+  sections: PropTypes.objectOf(PropTypes.array).isRequired,
+  item: PropTypes.shape({}),
+  setItem: PropTypes.func.isRequired,
+  section: PropTypes.string.isRequired,
+  setSection: PropTypes.func.isRequired,
 }
 
-export default withState('album', 'setAlbum', null)(Browser)
+export default compose(
+  withState('item', 'setItem', null),
+  withState('section', 'setSection', 'Albums'),
+)(Browser)
