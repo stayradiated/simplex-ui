@@ -3,6 +3,7 @@ import React, {PropTypes} from 'react'
 import Typed from '../Typed'
 import AlbumPanel from './Album'
 import ArtistPanel from './Artist'
+import PlaylistPanel from './Playlist'
 
 export default function TypedPanel (props) {
   const {item, ...otherProps} = props
@@ -13,6 +14,7 @@ export default function TypedPanel (props) {
       components={{
         album: (album) => <AlbumPanel {...otherProps} album={album} />,
         artist: (artist) => <ArtistPanel {...otherProps} artist={artist} />,
+        playlist: (playlist) => <PlaylistPanel {...otherProps} playlist={playlist} />,
       }}
     />
   )

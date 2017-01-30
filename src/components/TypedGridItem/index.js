@@ -3,6 +3,7 @@ import React, {PropTypes} from 'react'
 import Typed from '../Typed'
 import ArtistItem from './Artist'
 import AlbumItem from './Album'
+import PlaylistItem from './Playlist'
 
 export default function TypedGridItem (props) {
   const {item, ...otherProps} = props
@@ -13,6 +14,7 @@ export default function TypedGridItem (props) {
       components={{
         artist: (artist) => <ArtistItem {...otherProps} artist={artist} />,
         album: (album) => <AlbumItem {...otherProps} album={album} />,
+        playlist: (playlist) => <PlaylistItem {...otherProps} playlist={playlist} />,
       }}
     />
   )

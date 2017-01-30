@@ -10,6 +10,7 @@ import Browser from '../components/Browser'
 
 import albums from '../../albums.json'
 import artists from '../../artists.json'
+import playlists from '../../playlists.json'
 
 storiesOf('Header', module)
   .addDecorator(Wrapper)
@@ -59,6 +60,7 @@ storiesOf('Browser', module)
       sections={{
         Albums: albums,
         Artists: artists,
+        Playlists: playlists,
       }}
     />
   ))
