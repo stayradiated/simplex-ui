@@ -1,5 +1,7 @@
 import React from 'react'
 import {storiesOf, action} from '@kadira/storybook'
+import compose from 'recompose/compose'
+import withState from 'recompose/withState'
 
 import Wrapper from './Wrapper'
 
@@ -15,20 +17,15 @@ import playlists from '../../playlists.json'
 import servers from '../../servers.json'
 import libraries from '../../libraries.json'
 
+const StatefulGridHeader = (
+  withState('currentSection', 'onChange', 'Albums')
+)(GridHeader)
+
 storiesOf('Header', module)
   .addDecorator(Wrapper)
   .add('for Albums', () => (
-    <GridHeader
+    <StatefulGridHeader
       sections={['Playlists', 'Artists', 'Albums', 'Tracks']}
-      currentSection='Albums'
-      onChange={action('Change Section')}
-    />
-  ))
-  .add('for Artists', () => (
-    <GridHeader
-      sections={['Playlists', 'Artists', 'Albums', 'Tracks']}
-      currentSection='Artists'
-      onChange={action('Change Section')}
     />
   ))
 
@@ -56,10 +53,15 @@ storiesOf('Panel', module)
     />
   ))
 
+const StatefulBrowser = compose(
+  withState('section', 'onChangeSection', 'Albums'),
+  withState('item', 'onChangeItem', null)
+)(Browser)
+
 storiesOf('Browser', module)
   .addDecorator(Wrapper)
   .add('Albums & Artists', () => (
-    <Browser
+    <StatefulBrowser
       sections={{
         Albums: albums,
         Artists: artists,
@@ -68,13 +70,16 @@ storiesOf('Browser', module)
     />
   ))
 
+const StatefulSettings = compose(
+  withState('selectedServerId', 'onSelectServer', servers[1].id),
+  withState('selectedLibraryId', 'onSelectLibrary', libraries[1].id),
+)(Settings)
+
 storiesOf('Settings', module)
   .addDecorator(Wrapper)
   .add('Main', () => (
-    <Settings
+    <StatefulSettings
       servers={servers}
-      selectedServerId={servers[1].id}
       libraries={libraries}
-      selectedLibraryId={libraries[1].id}
     />
   ))

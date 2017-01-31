@@ -14,7 +14,7 @@ export default function ServerList (props) {
           key={index}
           server={server}
           selected={server.id === selectedId}
-          onSelect={() => onChange && onChange(server)}
+          onSelect={() => onChange && onChange(server.id)}
         />
       ))}
     </div>

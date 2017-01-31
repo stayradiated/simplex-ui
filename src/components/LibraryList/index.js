@@ -14,7 +14,7 @@ export default function LibraryList (props) {
           key={index}
           library={library}
           selected={library.id === selectedId}
-          onSelect={() => onChange && onChange(library)}
+          onSelect={() => onChange && onChange(library.id)}
         />
       ))}
     </div>

@@ -1,6 +1,4 @@
 import React, {PropTypes} from 'react'
-import compose from 'recompose/compose'
-import withState from 'recompose/withState'
 
 import './styles.css'
 
@@ -8,8 +6,12 @@ import TypedGrid from '../TypedGrid'
 import TypedPanel from '../TypedPanel'
 import GridHeader from '../GridHeader'
 
-function Browser (props) {
-  const {sections, item, setItem, section, setSection} = props
+export default function Browser (props) {
+  const {
+    sections,
+    item, onChangeItem,
+    section, onChangeSection,
+  } = props
 
   const items = sections[section]
 
@@ -19,17 +21,21 @@ function Browser (props) {
         <GridHeader
           sections={Object.keys(sections)}
           currentSection={section}
-          onChange={setSection}
+          onChange={onChangeSection}
         />
         <div className='Browser-grid-wrapper'>
-          <TypedGrid size={150} items={items} onChange={setItem} />
+          <TypedGrid
+            size={150}
+            items={items}
+            onChange={onChangeItem}
+          />
         </div>
       </div>
       {item &&
         <TypedPanel
           className='Browser-selected-panel'
           item={item}
-          onClose={() => setItem(null)}
+          onClose={() => onChangeItem && onChangeItem(null)}
         />}
     </div>
   )
@@ -38,12 +44,7 @@ function Browser (props) {
 Browser.propTypes = {
   sections: PropTypes.objectOf(PropTypes.array).isRequired,
   item: PropTypes.shape({}),
-  setItem: PropTypes.func.isRequired,
+  onChangeItem: PropTypes.func,
   section: PropTypes.string.isRequired,
-  setSection: PropTypes.func.isRequired,
+  onChangeSection: PropTypes.func,
 }
-
-export default compose(
-  withState('item', 'setItem', null),
-  withState('section', 'setSection', 'Albums'),
-)(Browser)

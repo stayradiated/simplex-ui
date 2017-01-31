@@ -22,7 +22,7 @@ export default function LibraryListItem (props) {
       className={classNames('LibraryListItem', {
         'LibraryListItem-selected': selected,
       })}
-      onClick-={onSelect}
+      onClick={onSelect}
     >
       <h1 className='LibraryListItem-title'>{library.title}</h1>
       <Icon icon='ok' className='LibraryListItem-icon-ok LibraryListItem-icon' />
