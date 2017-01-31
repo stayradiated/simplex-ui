@@ -1,0 +1,154 @@
+.LoginForm {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FBFFFE;
+  background: #1B1B1E;
+  padding: 2em;
+  overflow: auto;
+}
+
+.LoginForm-form {
+  flex: 1;
+  max-width: 600px;
+}
+
+.LoginForm-logo {
+  display: block;
+  width: 200px;
+  height: auto;
+  margin: 0 auto 2em;
+}
+
+/* REACT FLOATING LABEl */
+
+.fl-input-container {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  position: relative;
+}
+
+.fl-input-container input:not(:focus):not(.fl-valid):not(.fl-invalid) {
+  color: transparent;
+}
+
+.fl-input-container input,
+.fl-input-container label,
+.fl-error-msg {
+  text-shadow: none;
+}
+
+.fl-input-container input {
+  -webkit-tap-highlight-color: transparent;
+  appearance: none;
+  border-radius: 0;
+  display: flex;
+  font-size: 100%;
+  line-height: 25px;
+}
+
+.fl-input-label {
+  color: #999;
+  font-weight: normal;
+  opacity: 0.75;
+  order: 1;
+  padding-left: 2px;
+  pointer-events: none;
+  text-transform: capitalize;
+  transform-origin: left top;
+  transform: scale(1) translate3d(0, 22px, 0);
+  transition: 200ms ease all;
+}
+
+.fl-input-container input:focus + label,
+.fl-input-container input.fl-valid + label,
+.fl-invalid + label {
+  opacity: 1;
+  transform: scale(0.8) translate3d(0, 5px, 0);
+
+  color: #FAA916;
+}
+
+.fl-input:active,
+.fl-input:focus,
+.fl-input-label {
+  outline: 0;
+}
+
+.fl-input {
+  border: 0;
+  flex: 1 1 auto;
+  order: 2;
+
+  background: none;
+  color: #FBFFFE;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.fl-input-bar {
+  display: block;
+  order: 3;
+  top: 0;
+}
+
+.fl-input-bar::after,
+.fl-input-bar::before {
+  bottom: 0;
+  content: "";
+  height: 2px;
+  position: absolute;
+  transition: 200ms ease all;
+  width: 0;
+
+  background: #FAA916;
+}
+
+.fl-input-bar::before {
+  left: 50%;
+}
+
+.fl-input-bar::after {
+  right: 50%;
+}
+
+.fl-input:focus ~ .fl-input-bar::after,
+.fl-input:focus ~ .fl-input-bar::before,
+.fl-invalid ~ .fl-input-bar::after,
+.fl-invalid ~ .fl-input-bar::before {
+  width: 50%;
+}
+
+.fl-input-bar,
+.fl-error-msg {
+  position: relative;
+  width: inherit;
+}
+
+.fl-error-msg {
+  bottom: 0;
+  display: none;
+  font-size: 13px;
+  overflow: hidden;
+  position: absolute;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 90%;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.fl-error-show {
+  display: inline-block;
+}
+
+.fl-invalid ~ .fl-input-bar::after,
+.fl-invalid ~ .fl-input-bar::before {
+  background: #96031A;
+}
+
+.fl-input-container .fl-input.fl-invalid + label,
+.fl-error-msg {
+  color: #D30418;
+}

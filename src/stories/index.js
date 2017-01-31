@@ -10,6 +10,7 @@ import TypedPanel from '../components/TypedPanel'
 import GridHeader from '../components/GridHeader'
 import Browser from '../components/Browser'
 import Settings from '../components/Settings'
+import LoginForm from '../components/LoginForm'
 
 import albums from '../../albums.json'
 import artists from '../../artists.json'
@@ -82,4 +83,10 @@ storiesOf('Settings', module)
       servers={servers}
       libraries={libraries}
     />
+  ))
+
+storiesOf('Login Form', module)
+  .addDecorator(Wrapper)
+  .add('Main', () => (
+    <LoginForm onSubmit={action('Submit Form')} />
   ))
