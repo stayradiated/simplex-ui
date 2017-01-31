@@ -12,6 +12,8 @@ import Settings from '../components/Settings'
 import albums from '../../albums.json'
 import artists from '../../artists.json'
 import playlists from '../../playlists.json'
+import servers from '../../servers.json'
+import libraries from '../../libraries.json'
 
 storiesOf('Header', module)
   .addDecorator(Wrapper)
@@ -69,5 +71,10 @@ storiesOf('Browser', module)
 storiesOf('Settings', module)
   .addDecorator(Wrapper)
   .add('Main', () => (
-    <Settings />
+    <Settings
+      servers={servers}
+      selectedServerId={servers[1].id}
+      libraries={libraries}
+      selectedLibraryId={libraries[1].id}
+    />
   ))

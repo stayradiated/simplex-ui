@@ -1,0 +1,72 @@
+.ServerListItem {
+  background: none;
+  outline: none;
+  background: none;
+  border: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.2em 1em;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: left;
+  color: #FBFFFE;
+}
+
+.ServerListItem:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.ServerListItem:hover .ServerListItem-name {
+  color: #FBFFFE;
+}
+
+.ServerListItem-selected .ServerListItem-name {
+  color: #FAA916;
+}
+.ServerListItem-selected .ServerListItem-icon-ok {
+  display: block;
+}
+
+.ServerListItem-unavailable .ServerListItem-text {
+  color: #6D676E;
+}
+.ServerListItem-unavailable .ServerListItem-icon-warning {
+  display: block;
+}
+
+.ServerListItem-secure .ServerListItem-icon-lock {
+  display: block;
+}
+
+.ServerListItem-text {
+  flex: 1;
+}
+
+.ServerListItem-name {
+  font-size: 1em;
+  line-height: 1.2em;
+}
+
+.ServerListItem-status {
+  font-size: 0.8em;
+  font-weight: 400;
+  line-height: 1.2em;
+}
+
+.ServerListItem-icon {
+  display: none;
+  font-size: 1.2em;
+  margin-left: 0.5em;
+}
+
+.ServerListItem-icon-ok {
+  color: #FAA916;
+}
+
+.ServerListItem-icon-warning {
+  color: #96031A;
+}
+
+.ServerListItem-icon-lock {
+  color: #6D676E;
+}
