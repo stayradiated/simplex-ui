@@ -15,7 +15,10 @@ export default function ArtistPanel (props) {
 
   return (
     <Panel {...otherProps} details={details}>
-      <AlbumList albums={artist.albums} />
+      <AlbumList
+        albums={artist.albums}
+        preserveTrackIndex
+      />
     </Panel>
   )
 }

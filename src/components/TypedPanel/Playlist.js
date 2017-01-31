@@ -9,13 +9,15 @@ export default function PlaylistPanel (props) {
   const details = {
     thumb: playlist.composite,
     title: playlist.title,
-    subtitle: playlist.tracks.length,
-    meta: playlist.createdAt,
+    subtitle: 'Playlist',
+    meta: `${playlist.tracks.length} items`,
   }
 
   return (
     <Panel {...otherProps} details={details}>
-      <TrackList tracks={playlist.tracks} />
+      <TrackList
+        tracks={playlist.tracks}
+      />
     </Panel>
   )
 }

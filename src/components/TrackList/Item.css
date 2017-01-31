@@ -14,12 +14,20 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
-.TrackListItem-title {
+.TrackListItem-fulltitle {
   flex: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   padding-right: 1em;
+}
+
+.TrackListItem-title {
+}
+
+.TrackListItem-artist {
+  padding-left: 0.5em;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .TrackListItem-duration {

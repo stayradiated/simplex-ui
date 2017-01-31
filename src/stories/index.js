@@ -7,6 +7,7 @@ import TypedGrid from '../components/TypedGrid'
 import TypedPanel from '../components/TypedPanel'
 import GridHeader from '../components/GridHeader'
 import Browser from '../components/Browser'
+import Settings from '../components/Settings'
 
 import albums from '../../albums.json'
 import artists from '../../artists.json'
@@ -63,4 +64,10 @@ storiesOf('Browser', module)
         Playlists: playlists,
       }}
     />
+  ))
+
+storiesOf('Settings', module)
+  .addDecorator(Wrapper)
+  .add('Main', () => (
+    <Settings />
   ))

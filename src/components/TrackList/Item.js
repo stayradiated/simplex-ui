@@ -6,12 +6,16 @@ import Time from '../Time'
 import RatingBars from '../RatingBars'
 
 export default function TrackListItem (props) {
-  const {track, style} = props
+  const {index, track, style, displayArtist} = props
 
   return (
     <div className='TrackListItem' style={style}>
-      <span className='TrackListItem-index'>{track.index}</span>
-      <span className='TrackListItem-title'>{track.title}</span>
+      <span className='TrackListItem-index'>{index != null ? index : track.index}</span>
+      <span className='TrackListItem-fulltitle'>
+        <span className='TrackListItem-title'>{track.title}</span>
+        {displayArtist &&
+          <span className='TrackListItem-artist'>{track.originalTitle}</span>}
+      </span>
       <RatingBars
         className='TrackListItem-rating'
         value={track.userRating}
@@ -27,10 +31,12 @@ export default function TrackListItem (props) {
 
 TrackListItem.propTypes = {
   style: PropTypes.shape({}),
+  index: PropTypes.number,
   track: PropTypes.shape({
     index: PropTypes.number,
     title: PropTypes.string,
     userRating: PropTypes.nuumber,
     duration: PropTypes.nuumber,
   }).isRequired,
+  displayArtist: PropTypes.bool,
 }
