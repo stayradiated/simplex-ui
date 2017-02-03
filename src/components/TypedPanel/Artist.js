@@ -4,7 +4,7 @@ import Panel from '../Panel'
 import AlbumList from '../AlbumList'
 
 export default function ArtistPanel (props) {
-  const {artist, ...otherProps} = props
+  const {artist, currentlyPlayingTrackId, onSelectTrack, ...otherProps} = props
 
   const details = {
     thumb: artist.thumb,
@@ -17,6 +17,8 @@ export default function ArtistPanel (props) {
     <Panel {...otherProps} details={details}>
       <AlbumList
         albums={artist.albums}
+        currentlyPlayingTrackId={currentlyPlayingTrackId}
+        onSelectTrack={onSelectTrack}
         preserveTrackIndex
       />
     </Panel>
@@ -27,4 +29,6 @@ ArtistPanel.propTypes = {
   artist: PropTypes.shape({
     albums: PropTypes.arrayOf(PropTypes.object),
   }).isRequired,
+  currentlyPlayingTrackId: PropTypes.number,
+  onSelectTrack: PropTypes.func,
 }

@@ -5,12 +5,14 @@ import withState from 'recompose/withState'
 
 import Wrapper from './Wrapper'
 
+import Browser from '../components/Browser'
+import GridHeader from '../components/GridHeader'
+import LoginForm from '../components/LoginForm'
+import Queue from '../components/Queue'
+import Settings from '../components/Settings'
+import SoundBars from '../components/SoundBars'
 import TypedGrid from '../components/TypedGrid'
 import TypedPanel from '../components/TypedPanel'
-import GridHeader from '../components/GridHeader'
-import Browser from '../components/Browser'
-import Settings from '../components/Settings'
-import LoginForm from '../components/LoginForm'
 
 import albums from '../../albums.json'
 import artists from '../../artists.json'
@@ -21,6 +23,12 @@ import libraries from '../../libraries.json'
 const StatefulGridHeader = (
   withState('currentSection', 'onChange', 'Albums')
 )(GridHeader)
+
+storiesOf('Icon', module)
+  .addDecorator(Wrapper)
+  .add('SoundBars', () => (
+    <SoundBars />
+  ))
 
 storiesOf('Header', module)
   .addDecorator(Wrapper)
@@ -33,10 +41,16 @@ storiesOf('Header', module)
 storiesOf('Grid', module)
   .addDecorator(Wrapper)
   .add('of Albums', () => (
-    <TypedGrid size={200} items={albums} />
+    <TypedGrid
+      items={albums}
+      onChange={action('Select Item')}
+    />
   ))
   .add('of Artists', () => (
-    <TypedGrid size={200} items={artists} />
+    <TypedGrid
+      items={artists}
+      onChange={action('Select Item')}
+    />
   ))
 
 storiesOf('Panel', module)
@@ -44,13 +58,25 @@ storiesOf('Panel', module)
   .add('Album', () => (
     <TypedPanel
       item={albums[0]}
+      currentlyPlayingTrackId={albums[0].tracks[4].id}
       onClose={action('Close Panel')}
+      onSelectTrack={action('Change Track')}
     />
   ))
   .add('Artist', () => (
     <TypedPanel
       item={artists[0]}
+      currentlyPlayingTrackId={artists[0].albums[0].tracks[4].id}
       onClose={action('Close Panel')}
+      onSelectTrack={action('Change Track')}
+    />
+  ))
+  .add('Playlist', () => (
+    <TypedPanel
+      item={playlists[0]}
+      currentlyPlayingTrackId={playlists[0].tracks[4].id}
+      onClose={action('Close Panel')}
+      onSelectTrack={action('Change Track')}
     />
   ))
 
@@ -89,4 +115,15 @@ storiesOf('Login Form', module)
   .addDecorator(Wrapper)
   .add('Main', () => (
     <LoginForm onSubmit={action('Submit Form')} />
+  ))
+
+storiesOf('Queue', module)
+  .addDecorator(Wrapper)
+  .add('Full', () => (
+    <Queue
+      tracks={playlists[4].tracks}
+      selectedIndex={5}
+      onChange={action('Queue Change')}
+      onSort={action('Queue Sort')}
+    />
   ))

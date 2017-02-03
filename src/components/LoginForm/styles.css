@@ -3,22 +3,41 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FBFFFE;
-  background: #1B1B1E;
   padding: 2em;
   overflow: auto;
+  position: relative;
 }
 
 .LoginForm-form {
+  position: relative;
+  z-index: 1;
   flex: 1;
-  max-width: 600px;
+  max-width: 400px;
+  background: var(--black-10);
+  padding: 2em;
+  box-sizing: border-box;
 }
 
 .LoginForm-logo {
-  display: block;
-  width: 200px;
-  height: auto;
-  margin: 0 auto 2em;
+  text-align: center;
+  font-family: var(--font-logo);
+  font-size: 3em;
+  margin: 0;
+}
+
+.LoginForm-button {
+  color: var(--background);
+  background: var(--primary);
+  border: none;
+  outline: none;
+  padding: 0.5em 1em;
+  border-radius: 2px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.LoginForm-button:hover {
+  background: var(--primary-hover);
 }
 
 /* REACT FLOATING LABEl */
@@ -26,8 +45,8 @@
 .fl-input-container {
   display: flex;
   flex-direction: column;
-  padding: 25px;
   position: relative;
+  margin: 2em 0;
 }
 
 .fl-input-container input:not(:focus):not(.fl-valid):not(.fl-invalid) {
@@ -50,7 +69,7 @@
 }
 
 .fl-input-label {
-  color: #999;
+  color: var(--white-50);
   font-weight: normal;
   opacity: 0.75;
   order: 1;
@@ -84,7 +103,7 @@
 
   background: none;
   color: #FBFFFE;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid var(--white-30);
 }
 
 .fl-input-bar {
@@ -145,10 +164,10 @@
 
 .fl-invalid ~ .fl-input-bar::after,
 .fl-invalid ~ .fl-input-bar::before {
-  background: #96031A;
+  background: var(--error);
 }
 
 .fl-input-container .fl-input.fl-invalid + label,
 .fl-error-msg {
-  color: #D30418;
+  color: var(--error);
 }

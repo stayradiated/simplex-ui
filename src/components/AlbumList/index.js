@@ -1,19 +1,23 @@
 import React, {PropTypes} from 'react'
 
-import './styles.css'
-
-import ItemsList from '../List'
+import ItemsList from '../List/withAutoSizer'
 import AlbumListHeader from './Header'
 import TrackListItem from '../TrackList/Item'
 import TrackListSummary from '../TrackList/Summary'
 
 export default function AlbumList (props) {
-  const {albums} = props
+  const {albums, currentlyPlayingTrackId, onSelectTrack} = props
 
   const items = albums
     .map((album) => [
       <AlbumListHeader album={album} />,
-      ...album.tracks.map((track) => <TrackListItem track={track} />),
+      ...album.tracks.map((track) => (
+        <TrackListItem
+          track={track}
+          currentlyPlaying={track.id === currentlyPlayingTrackId}
+          onSelect={() => onSelectTrack && onSelectTrack(track)}
+        />
+      )),
     ])
     .reduce((acc, tracks) => acc.concat(tracks), [])
 
@@ -26,10 +30,12 @@ export default function AlbumList (props) {
   )
 
   return (
-    <ItemsList items={items} />
+    <ItemsList rowHeight={40} items={items} />
   )
 }
 
 AlbumList.propTypes = {
   albums: PropTypes.arrayOf(PropTypes.object).isRequired,
+  currentlyPlayingTrackId: PropTypes.number,
+  onSelectTrack: PropTypes.func,
 }

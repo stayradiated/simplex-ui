@@ -5,7 +5,7 @@ import './styles.css'
 import SquareImage from '../SquareImage'
 
 export default function GridItem (props) {
-  const {id, onSelect, image, title, subtitle, size, ...otherProps} = props
+  const {id, onSelect, image, title, subtitle, ...otherProps} = props
 
   return (
     <button
@@ -17,7 +17,6 @@ export default function GridItem (props) {
         className='GridItem-image'
         src={image}
         alt={title}
-        size={size}
       />
       <div className='GridItem-text'>
         <h2 className='GridItem-title'>{title}</h2>
@@ -31,7 +30,6 @@ GridItem.propTypes = {
   id: PropTypes.number,
   image: PropTypes.string,
   title: PropTypes.string,
-  size: PropTypes.number,
   subtitle: PropTypes.string,
   onSelect: PropTypes.func,
 }

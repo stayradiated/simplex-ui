@@ -1,18 +1,22 @@
 import React, {PropTypes} from 'react'
 
 import TypedGridItem from '../TypedGridItem'
-import Grid from '../Grid/AutoSize'
+import Grid from '../Grid/withAutoSizer'
 import withState from '../Grid/withState'
 import withRouter from '../Grid/withRouter'
 
 export default function TypedGrid (props) {
-  const {size, onChange, ...otherProps} = props
+  const {onChange, ...otherProps} = props
 
   return (
-    <Grid {...otherProps} itemHeight={size + 60} itemWidth={size}>
+    <Grid
+      {...otherProps}
+      itemsPerRow={6}
+      getItemHeight={(width) => width + 50}
+      paddingHorizontal={5}
+    >
       {(item) => (
         <TypedGridItem
-          size={size - 10}
           item={item}
           onSelect={() => onChange && onChange(item)}
         />
@@ -22,7 +26,6 @@ export default function TypedGrid (props) {
 }
 
 TypedGrid.propTypes = {
-  size: PropTypes.number.isRequired,
   onChange: PropTypes.func,
 }
 

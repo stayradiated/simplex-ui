@@ -1,12 +1,13 @@
 import React, {Component, PropTypes} from 'react'
 import {InfiniteLoader, List} from 'react-virtualized'
 import classNames from 'classnames'
+import getScrollbarWidth from 'get-scrollbar-width'
 
 import './styles.css'
 
 import Row from './Row'
 
-const SCROLLBAR = 15
+const SCROLLBAR = getScrollbarWidth()
 
 export default class Grid extends Component {
   static propTypes = {
@@ -17,11 +18,19 @@ export default class Grid extends Component {
 
     height: PropTypes.number.isRequired,
     width: PropTypes.number.isRequired,
-    itemHeight: PropTypes.number.isRequired,
-    itemWidth: PropTypes.number.isRequired,
+    itemsPerRow: PropTypes.number.isRequired,
+    getItemHeight: PropTypes.func,
+
+    paddingHorizontal: PropTypes.number,
 
     children: PropTypes.func.isRequired,
     onLoad: PropTypes.func,
+  }
+
+  static defaultProps = {
+    itemsPerRow: 5,
+    getItemHeight: (width) => width,
+    paddingHorizontal: 0,
   }
 
   constructor () {
@@ -29,17 +38,8 @@ export default class Grid extends Component {
     this.handleLoadMoreRows = this.handleLoadMoreRows.bind(this)
   }
 
-  calcItemsPerRow () {
-    const {width, itemWidth} = this.props
-    return Math.floor((width - SCROLLBAR) / itemWidth)
-  }
-
-  calcRows (itemsPerRow) {
-    const {items} = this.props
-
-    if (itemsPerRow === 0) {
-      return []
-    }
+  calcRows () {
+    const {itemsPerRow, items} = this.props
 
     return items.reduce((rows, item, index) => {
       if (index % itemsPerRow === 0) {
@@ -50,32 +50,32 @@ export default class Grid extends Component {
     }, [])
   }
 
-  calcRowOffset () {
-    const {width, itemWidth} = this.props
-    return ((width - SCROLLBAR) % itemWidth) / 2
-  }
-
   calcTotal () {
     const {items, total} = this.props
     return total != null ? total : items.length
   }
 
   handleLoadMoreRows ({startIndex, stopIndex}) {
-    const {onLoad} = this.props
-    const itemsPerRow = this.calcItemsPerRow()
+    const {onLoad, itemsPerRow} = this.props
     return onLoad(startIndex * itemsPerRow, (stopIndex + 1) * itemsPerRow)
   }
 
   render () {
     const {
-      width, height, className, itemHeight, itemWidth, children,
+      children,
+      width, height, className,
+      getItemHeight, itemsPerRow, paddingHorizontal,
     } = this.props
+
+    const innerWidth = width - SCROLLBAR - (paddingHorizontal * 2)
+
+    const itemWidth = Math.floor(innerWidth / itemsPerRow)
+    const itemHeight = getItemHeight(itemWidth)
+    const rowOffset = ((width - SCROLLBAR) % itemWidth) / 2
 
     const total = this.calcTotal()
 
-    const itemsPerRow = this.calcItemsPerRow()
-    const rowOffset = this.calcRowOffset()
-    const rows = this.calcRows(itemsPerRow)
+    const rows = this.calcRows()
     const rowCount = Math.ceil(total / itemsPerRow)
 
     const isRowLoaded = ({index}) => {

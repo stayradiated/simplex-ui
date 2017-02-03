@@ -4,7 +4,7 @@ import Panel from '../Panel'
 import TrackList from '../TrackList'
 
 export default function AlbumPanel (props) {
-  const {album, ...otherProps} = props
+  const {album, currentlyPlayingTrackId, onSelectTrack, ...otherProps} = props
 
   const details = {
     thumb: album.thumb,
@@ -17,6 +17,8 @@ export default function AlbumPanel (props) {
     <Panel {...otherProps} details={details}>
       <TrackList
         tracks={album.tracks}
+        currentlyPlayingTrackId={currentlyPlayingTrackId}
+        onSelectTrack={onSelectTrack}
         preserveTrackIndex
       />
     </Panel>
@@ -31,4 +33,6 @@ AlbumPanel.propTypes = {
     pear: PropTypes.number,
     tracks: PropTypes.arrayOf(PropTypes.object),
   }).isRequired,
+  currentlyPlayingTrackId: PropTypes.number,
+  onSelectTrack: PropTypes.func,
 }

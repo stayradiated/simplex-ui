@@ -1,8 +1,10 @@
 import React, {PropTypes, cloneElement} from 'react'
-import {AutoSizer, List} from 'react-virtualized'
+import {List} from 'react-virtualized'
+
+import './styles.css'
 
 export default function ItemsList (props) {
-  const {items} = props
+  const {items, ...otherProps} = props
 
   const renderItem = ({index, style}) => {
     const item = items[index]
@@ -13,20 +15,11 @@ export default function ItemsList (props) {
   }
 
   return (
-    <AutoSizer>
-      {({height, width}) => (
-        <List
-          width={width}
-          height={height}
-          rowCount={items.length}
-          rowHeight={40}
-          rowRenderer={renderItem}
-          style={{
-            overflowX: 'hidden',
-          }}
-        />
-      )}
-    </AutoSizer>
+    <List
+      {...otherProps}
+      rowCount={items.length}
+      rowRenderer={renderItem}
+    />
   )
 }
 

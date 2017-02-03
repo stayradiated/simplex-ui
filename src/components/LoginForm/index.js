@@ -6,6 +6,9 @@ import FloatingLabel from
 import './styles.css'
 
 import logo from '../../../logo.png'
+import background from './background.jpg'
+
+import BlurImage from '../BlurImage'
 
 export default class LoginForm extends Component {
 
@@ -47,15 +50,14 @@ export default class LoginForm extends Component {
   render () {
     return (
       <div className='LoginForm'>
+        <BlurImage src={background} />
         <form
           className='LoginForm-form'
           onSubmit={this.handleFormSubmit}
         >
-          <img
-            alt='Simplex'
-            className='LoginForm-logo'
-            src={logo}
-          />
+          <h1 className='LoginForm-logo'>
+            Plex Music
+          </h1>
           <FloatingLabel
             placeholder='Username'
             type='text'
@@ -68,7 +70,9 @@ export default class LoginForm extends Component {
             id='LoginForm-password'
             onChange={this.handlePasswordChange}
           />
-          <button type='submit'>Log In</button>
+          <button type='submit' className='LoginForm-button'>
+            Log In
+          </button>
         </form>
       </div>
     )

@@ -4,13 +4,22 @@ import './Item.css'
 
 import Time from '../Time'
 import RatingBars from '../RatingBars'
+import SoundBars from '../SoundBars'
 
 export default function TrackListItem (props) {
-  const {index, track, style, displayArtist} = props
+  const {
+    index, track, style, currentlyPlaying, displayArtist, onSelect,
+  } = props
 
   return (
-    <div className='TrackListItem' style={style}>
-      <span className='TrackListItem-index'>{index != null ? index : track.index}</span>
+    <button className='TrackListItem' style={style} onClick={onSelect}>
+      {currentlyPlaying
+        ? <span className='TrackListItem-nowPlayingIcon'>
+          <SoundBars />
+        </span>
+        : <span className='TrackListItem-index'>
+          {index != null ? index : track.index}
+        </span>}
       <span className='TrackListItem-fulltitle'>
         <span className='TrackListItem-title'>{track.title}</span>
         {displayArtist &&
@@ -25,7 +34,7 @@ export default function TrackListItem (props) {
         className='TrackListItem-duration'
         value={track.duration}
       />
-    </div>
+    </button>
   )
 }
 
@@ -38,5 +47,7 @@ TrackListItem.propTypes = {
     userRating: PropTypes.nuumber,
     duration: PropTypes.nuumber,
   }).isRequired,
+  currentlyPlaying: PropTypes.bool,
   displayArtist: PropTypes.bool,
+  onSelect: PropTypes.func,
 }
