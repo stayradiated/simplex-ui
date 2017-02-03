@@ -4,7 +4,7 @@ import './styles.css'
 
 import TypedGrid from '../TypedGrid'
 import TypedPanel from '../TypedPanel'
-import GridHeader from '../GridHeader'
+import NavBar from '../NavBar'
 
 export default function Browser (props) {
   const {
@@ -18,7 +18,7 @@ export default function Browser (props) {
   return (
     <div className='Browser'>
       <div className='Browser-grid'>
-        <GridHeader
+        <NavBar
           sections={Object.keys(sections)}
           currentSection={section}
           onChange={onChangeSection}

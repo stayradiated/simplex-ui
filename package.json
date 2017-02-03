@@ -7,7 +7,7 @@
     "react-scripts": "0.8.5"
   },
   "dependencies": {
-    "@stayradiated/react-floating-label": "^1.0.4",
+    "@stayradiated/react-floating-label": "^1.0.5",
     "classnames": "^2.2.5",
     "get-scrollbar-width": "^1.0.4",
     "moment": "^2.17.1",

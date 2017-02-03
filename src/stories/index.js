@@ -6,7 +6,7 @@ import withState from 'recompose/withState'
 import Wrapper from './Wrapper'
 
 import Browser from '../components/Browser'
-import GridHeader from '../components/GridHeader'
+import NavBar from '../components/NavBar'
 import LoginForm from '../components/LoginForm'
 import Queue from '../components/Queue'
 import Settings from '../components/Settings'
@@ -20,9 +20,9 @@ import playlists from '../../playlists.json'
 import servers from '../../servers.json'
 import libraries from '../../libraries.json'
 
-const StatefulGridHeader = (
+const StatefulNavBar = (
   withState('currentSection', 'onChange', 'Albums')
-)(GridHeader)
+)(NavBar)
 
 storiesOf('Icon', module)
   .addDecorator(Wrapper)
@@ -33,7 +33,7 @@ storiesOf('Icon', module)
 storiesOf('Header', module)
   .addDecorator(Wrapper)
   .add('for Albums', () => (
-    <StatefulGridHeader
+    <StatefulNavBar
       sections={['Playlists', 'Artists', 'Albums', 'Tracks']}
     />
   ))

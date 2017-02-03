@@ -1,4 +1,4 @@
-.GridHeader {
+.NavBar {
   height: 3em;
   width: calc(100% - 2em);
   padding: 0 1em;
@@ -8,11 +8,11 @@
   box-shadow: inset 0 -2px 0 var(--black-30);
 }
 
-.GridHeader-section-list {
+.NavBar-section-list {
   display: flex;
 }
 
-.GridHeader-section-item {
+.NavBar-section-item {
   padding: 0 1em;
   line-height: 3em;
   border: 0;
@@ -25,19 +25,19 @@
   transition: all 0.3s ease;
 }
 
-.GridHeader-section-item:hover {
+.NavBar-section-item:hover {
   background: var(--white-05);
   border-bottom-color: var(--white-10);
 }
 
-.GridHeader-section-item-selected,
-.GridHeader-section-item-selected:hover {
+.NavBar-section-item-selected,
+.NavBar-section-item-selected:hover {
   background: var(--white-05);
   color: var(--primary);
   border-bottom-color: var(--primary);
 }
 
-.GridHeader-dropdown-button {
+.NavBar-dropdown-button {
   display: flex;
   background: none;
   border: none;
@@ -47,11 +47,11 @@
   color: var(--white-50);
 }
 
-.GridHeader-dropdown-label {
+.NavBar-dropdown-label {
   color: #fff;
   margin-left: 0.6em;
 }
 
-.GridHeader-dropdown-icon {
+.NavBar-dropdown-icon {
   margin-left: 0.3em;
 }
