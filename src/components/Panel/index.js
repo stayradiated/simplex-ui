@@ -6,11 +6,16 @@ import './styles.css'
 import PanelHeader from './Header'
 
 export default function Panel (props) {
-  const {details, children, className, onClose} = props
+  const {details, children, className, onClickSubtitle, onClickMeta, onClose} = props
 
   return (
     <div className={classNames(className, 'Panel')}>
-      <PanelHeader {...details} onClose={onClose} />
+      <PanelHeader
+        {...details}
+        onClickSubtitle={onClickSubtitle}
+        onClickMeta={onClickMeta}
+        onClose={onClose}
+      />
       <div className='Panel-content'>
         {children}
       </div>
@@ -27,5 +32,7 @@ Panel.propTypes = {
     meta: PropTypes.string,
   }).isRequired,
   className: PropTypes.string,
+  onClickSubtitle: PropTypes.func,
+  onClickMeta: PropTypes.func,
   onClose: PropTypes.func,
 }

@@ -1,11 +1,4 @@
 .TrackListItem {
-  width: 100%;
-  background: none;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  text-align: left;
-
   display: flex;
   align-items: center;
   list-style-type: none;

@@ -7,7 +7,10 @@ import Icon from '../Icon'
 import SquareImage from '../SquareImage'
 
 export default function PanelHeader (props) {
-  const {thumb, title, subtitle, meta, onClose} = props
+  const {
+    thumb, title, subtitle, meta,
+    onClickSubtitle, onClickMeta, onClose,
+  } = props
 
   return (
     <div className='PanelHeader'>
@@ -20,8 +23,18 @@ export default function PanelHeader (props) {
       />
       <div className='PanelHeader-text'>
         <div className='PanelHeader-title'>{title}</div>
-        <div className='PanelHeader-subtitle'>{subtitle}</div>
-        <div className='PanelHeader-meta'>{meta}</div>
+        <button
+          className='PanelHeader-subtitle'
+          onClick={onClickSubtitle}
+        >
+          {subtitle}
+        </button>
+        <button
+          className='PanelHeader-meta'
+          onClick={onClickMeta}
+        >
+          {meta}
+        </button>
       </div>
       <Icon
         icon='cancel'
@@ -37,5 +50,7 @@ PanelHeader.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   meta: PropTypes.string,
+  onClickSubtitle: PropTypes.func,
+  onClickMeta: PropTypes.func,
   onClose: PropTypes.func,
 }

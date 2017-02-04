@@ -25,6 +25,11 @@
   color: #fff;
 }
 
+.PanelHeader-subtitle:hover,
+.PanelHeader-meta:hover {
+  text-decoration: underline;
+}
+
 .PanelHeader-subtitle {
   color: rgba(255, 255, 255, 0.5);
 }

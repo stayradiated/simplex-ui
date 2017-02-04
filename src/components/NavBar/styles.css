@@ -39,11 +39,7 @@
 
 .NavBar-dropdown-button {
   display: flex;
-  background: none;
-  border: none;
-  outline: none;
   line-height: 3em;
-  font-size: 1em;
   color: var(--white-50);
 }
 

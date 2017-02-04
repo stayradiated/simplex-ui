@@ -28,12 +28,8 @@
 .LoginForm-button {
   color: var(--background);
   background: var(--primary);
-  border: none;
-  outline: none;
   padding: 0.5em 1em;
   border-radius: 2px;
-  font-size: 1em;
-  cursor: pointer;
 }
 
 .LoginForm-button:hover {

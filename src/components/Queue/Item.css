@@ -1,14 +1,7 @@
 .QueueItem {
-  background: none;
-  border: none;
-  outline: none;
-  text-align: left;
-  width: 100%;
   display: flex;
   padding: 0.5em;
   align-items: center;
-  font-size: 1rem;
-  cursor: pointer;
   border-bottom: 1px solid var(--white-05);
 }
 

@@ -6,6 +6,7 @@ import withState from 'recompose/withState'
 import Wrapper from './Wrapper'
 
 import Browser from '../components/Browser'
+import Controls from '../components/Controls'
 import NavBar from '../components/NavBar'
 import LoginForm from '../components/LoginForm'
 import Queue from '../components/Queue'
@@ -14,11 +15,12 @@ import SoundBars from '../components/SoundBars'
 import TypedGrid from '../components/TypedGrid'
 import TypedPanel from '../components/TypedPanel'
 
-import albums from '../../albums.json'
-import artists from '../../artists.json'
-import playlists from '../../playlists.json'
-import servers from '../../servers.json'
-import libraries from '../../libraries.json'
+import albums from '../../data/albums.json'
+import artists from '../../data/artists.json'
+import playlists from '../../data/playlists.json'
+import servers from '../../data/servers.json'
+import libraries from '../../data/libraries.json'
+import tracks from '../../data/tracks.json'
 
 const StatefulNavBar = (
   withState('currentSection', 'onChange', 'Albums')
@@ -59,6 +61,8 @@ storiesOf('Panel', module)
     <TypedPanel
       item={albums[0]}
       currentlyPlayingTrackId={albums[0].tracks[4].id}
+      onClickSubtitle={action('Click Subtitle')}
+      onClickMeta={action('Click Meta')}
       onClose={action('Close Panel')}
       onSelectTrack={action('Change Track')}
     />
@@ -67,6 +71,8 @@ storiesOf('Panel', module)
     <TypedPanel
       item={artists[0]}
       currentlyPlayingTrackId={artists[0].albums[0].tracks[4].id}
+      onClickSubtitle={action('Click Subtitle')}
+      onClickMeta={action('Click Meta')}
       onClose={action('Close Panel')}
       onSelectTrack={action('Change Track')}
     />
@@ -75,6 +81,8 @@ storiesOf('Panel', module)
     <TypedPanel
       item={playlists[0]}
       currentlyPlayingTrackId={playlists[0].tracks[4].id}
+      onClickSubtitle={action('Click Subtitle')}
+      onClickMeta={action('Click Meta')}
       onClose={action('Close Panel')}
       onSelectTrack={action('Change Track')}
     />
@@ -126,4 +134,10 @@ storiesOf('Queue', module)
       onChange={action('Queue Change')}
       onSort={action('Queue Sort')}
     />
+  ))
+
+storiesOf('Controls', module)
+  .addDecorator(Wrapper)
+  .add('Basic', () => (
+    <Controls track={tracks[0]} />
   ))
