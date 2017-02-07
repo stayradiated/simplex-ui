@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import './styles.css'
 
 import Icon from '../Icon'
+import SearchBar from '../SearchBar'
 
 export default function NavBar (props) {
   const {sections, currentSection, onChange} = props
@@ -11,16 +12,13 @@ export default function NavBar (props) {
   return (
     <header className='NavBar'>
       <nav className='NavBar-section-list'>
-        <button
-          Search
+        <SearchBar
           className={classNames({
             'NavBar-section-item': true,
             'NavBar-section-item-selected': currentSection === 'Search',
           })}
           onClick={() => onChange && onChange('Search')}
-        >
-          <Icon icon='search' />
-        </button>
+        />
         {sections.map((section, key) => (
           <button
             key={key}
@@ -28,7 +26,7 @@ export default function NavBar (props) {
               'NavBar-section-item': true,
               'NavBar-section-item-selected': section === currentSection,
             })}
-            onClick={() => onChange && onChange(section)}
+            onMouseDown={() => onChange && onChange(section)}
           >
             {section}
           </button>

@@ -39,6 +39,7 @@ storiesOf('Header', module)
   .add('for Albums', () => (
     <StatefulNavBar
       sections={['Playlists', 'Artists', 'Albums', 'Tracks']}
+      onChange={action('On Change')}
     />
   ))
 

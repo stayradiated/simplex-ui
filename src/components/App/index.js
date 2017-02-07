@@ -58,6 +58,8 @@ App.propTypes = {
   onChangeSection: PropTypes.func,
 
   queue: PropTypes.arrayOf(PropTypes.object),
+  displayQueue: PropTypes.bool,
+  setDisplayQueue: PropTypes.func,
 }
 
 export default compose(
