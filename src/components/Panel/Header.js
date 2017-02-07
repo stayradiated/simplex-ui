@@ -16,10 +16,10 @@ export default function PanelHeader (props) {
     <div className='PanelHeader'>
       <BlurImage src={thumb} />
       <SquareImage
-        className='PanelHeader-image'
+        className='PanelHeader-thumb'
+        imageClassName='PanelHeader-thumbImage'
         src={thumb}
         alt={title}
-        size={150}
       />
       <div className='PanelHeader-text'>
         <div className='PanelHeader-title'>{title}</div>

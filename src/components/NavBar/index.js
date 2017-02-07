@@ -38,7 +38,7 @@ export default function NavBar (props) {
         <span className='NavBar-dropdown-label'>
           Date Added
         </span>
-        <Icon icon='sort' className='NavBar-dropdown-icon' />
+        <Icon icon='down-dir' className='NavBar-dropdown-icon' />
       </button>
     </header>
   )

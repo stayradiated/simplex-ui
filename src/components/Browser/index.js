@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react'
+import classNames from 'classnames'
 
 import './styles.css'
 
@@ -8,7 +9,7 @@ import NavBar from '../NavBar'
 
 export default function Browser (props) {
   const {
-    sections,
+    className, sections,
     item, onChangeItem,
     section, onChangeSection,
   } = props
@@ -16,7 +17,7 @@ export default function Browser (props) {
   const items = sections[section]
 
   return (
-    <div className='Browser'>
+    <div className={classNames(className, 'Browser')}>
       <div className='Browser-grid'>
         <NavBar
           sections={Object.keys(sections)}
@@ -42,6 +43,7 @@ export default function Browser (props) {
 }
 
 Browser.propTypes = {
+  className: PropTypes.string,
   sections: PropTypes.objectOf(PropTypes.array).isRequired,
   item: PropTypes.shape({}),
   onChangeItem: PropTypes.func,

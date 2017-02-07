@@ -4,7 +4,7 @@ import QueueItem from './Item'
 import SortableItemsList from '../SortableList'
 
 export default function Queue (props) {
-  const {selectedIndex, tracks, onChange, onSort} = props
+  const {className, selectedIndex, tracks, onChange, onSort} = props
 
   const items = tracks.map((track, index) => (
     <QueueItem
@@ -18,6 +18,7 @@ export default function Queue (props) {
 
   return (
     <SortableItemsList
+      className={className}
       items={items}
       itemHeight={60}
       rowHeight={60}
@@ -30,6 +31,7 @@ export default function Queue (props) {
 }
 
 Queue.propTypes = {
+  className: PropTypes.string,
   tracks: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   selectedIndex: PropTypes.number,
   onChange: PropTypes.func,

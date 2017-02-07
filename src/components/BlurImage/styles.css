@@ -14,7 +14,7 @@
   top: 0;
   bottom: 0;
   width: 100%;
-  filter: blur(50px) saturate(200%) brightness(80%) contrast(60%);
+  filter: blur(50px) saturate(200%) brightness(80%) contrast(70%);
 }
 
 .BlurImage-image {

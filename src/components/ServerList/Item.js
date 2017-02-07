@@ -35,7 +35,7 @@ export default function ServerListItem (props) {
         <h1 className='ServerListItem-name'>{server.name}</h1>
         <h2 className='ServerListItem-status'>{status}</h2>
       </div>
-      <Icon icon='ok' className='ServerListItem-icon-ok ServerListItem-icon' />
+      <Icon icon='check' className='ServerListItem-icon-ok ServerListItem-icon' />
       <Icon icon='lock' className='ServerListItem-icon-lock ServerListItem-icon' />
       <Icon icon='attention' className='ServerListItem-icon-warning ServerListItem-icon' />
     </button>

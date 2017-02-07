@@ -5,11 +5,6 @@ import FloatingLabel from
 
 import './styles.css'
 
-import logo from '../../../logo.png'
-import background from './background.jpg'
-
-import BlurImage from '../BlurImage'
-
 export default class LoginForm extends Component {
 
   static propTypes = {
@@ -50,7 +45,6 @@ export default class LoginForm extends Component {
   render () {
     return (
       <div className='LoginForm'>
-        <BlurImage src={background} />
         <form
           className='LoginForm-form'
           onSubmit={this.handleFormSubmit}

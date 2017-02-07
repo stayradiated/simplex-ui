@@ -9,7 +9,7 @@ const LIBRARY_ICON = {
   movie: 'video',
   artist: 'music',
   photo: 'picture',
-  show: 'television',
+  show: 'monitor',
 }
 
 export default function LibraryListItem (props) {

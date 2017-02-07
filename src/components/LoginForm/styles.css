@@ -6,6 +6,12 @@
   padding: 2em;
   overflow: auto;
   position: relative;
+
+  background: 
+  linear-gradient(to left bottom, rgba(68, 51, 57, 0) 0%, rgb(68, 51, 57) 100%),
+  linear-gradient(to left top, rgba(179, 98, 61, 0) 0%, rgb(179, 98, 61) 100%),
+  linear-gradient(to right top, rgba(215, 135, 84, 0) 0%, rgb(215, 135, 84) 100%),
+  linear-gradient(to right bottom, rgba(243, 185, 121, 0) 0%, rgb(243, 185, 121) 100%)
 }
 
 .LoginForm-form {
@@ -26,6 +32,7 @@
 }
 
 .LoginForm-button {
+  width: auto;
   color: var(--background);
   background: var(--primary);
   padding: 0.5em 1em;

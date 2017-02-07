@@ -38,6 +38,7 @@
 }
 
 .NavBar-dropdown-button {
+  width: auto;
   display: flex;
   line-height: 3em;
   color: var(--white-50);

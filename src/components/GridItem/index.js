@@ -14,7 +14,8 @@ export default function GridItem (props) {
       onClick={() => onSelect && onSelect(id)}
     >
       <SquareImage
-        className='GridItem-image'
+        className='GridItem-thumb'
+        imageClassName='GridItem-thumbImage'
         src={image}
         alt={title}
       />

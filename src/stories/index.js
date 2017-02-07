@@ -2,9 +2,11 @@ import React from 'react'
 import {storiesOf, action} from '@kadira/storybook'
 import compose from 'recompose/compose'
 import withState from 'recompose/withState'
+import withHandlers from 'recompose/withHandlers'
 
 import Wrapper from './Wrapper'
 
+import App from '../components/App'
 import Browser from '../components/Browser'
 import Controls from '../components/Controls'
 import NavBar from '../components/NavBar'
@@ -136,8 +138,41 @@ storiesOf('Queue', module)
     />
   ))
 
+const StatefulControls = compose(
+  withState('paused', 'setPaused', false),
+  withHandlers({
+    onPlay: (props) => () => {
+      action('Play')()
+      props.setPaused(false)
+    },
+    onPause: (props) => () => {
+      action('Pause')()
+      props.setPaused(true)
+    },
+  })
+)(Controls)
+
 storiesOf('Controls', module)
   .addDecorator(Wrapper)
   .add('Basic', () => (
-    <Controls track={tracks[0]} />
+    <StatefulControls
+      track={tracks[49]}
+      audio={{
+        currentTime: 1000 * 60 * 2,
+        buffered: 1000 * 60 * 3,
+        duration: 1000 * 60 * 4,
+      }}
+      onPrev={action('Prev')}
+      onNext={action('Next')}
+      onQueue={action('Queue')}
+    />
+  ))
+
+storiesOf('App', module)
+  .addDecorator(Wrapper)
+  .add('Main', () => (
+    <App
+      albums={albums}
+      queue={playlists[4].tracks}
+    />
   ))

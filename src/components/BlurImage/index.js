@@ -3,7 +3,7 @@ import React, {PropTypes} from 'react'
 // styles
 import './styles.css'
 
-export default function Gradiator (props) {
+export default function BlurImage (props) {
   const {src} = props
 
   return (
@@ -19,6 +19,6 @@ export default function Gradiator (props) {
   )
 }
 
-Gradiator.propTypes = {
+BlurImage.propTypes = {
   src: PropTypes.string,
 }
