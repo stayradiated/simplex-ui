@@ -104,6 +104,7 @@ storiesOf('Browser', module)
         Albums: albums,
         Artists: artists,
         Playlists: playlists,
+        Tracks: tracks,
       }}
     />
   ))

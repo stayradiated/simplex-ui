@@ -21,6 +21,6 @@ ArtistItem.propTypes = {
     id: PropTypes.number,
     thumb: PropTypes.string,
     title: PropTypes.string,
-    country: PropTypes.arrayOf(PropTypes.string),
+    genre: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
 }
