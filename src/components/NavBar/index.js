@@ -1,36 +1,53 @@
 import React, {PropTypes} from 'react'
 import classNames from 'classnames'
+import noop from 'nop'
 
 import './styles.css'
 
 import Icon from '../Icon'
 import SearchBar from '../SearchBar'
 
+export const SEARCH = 'SEARCH'
+
 export default function NavBar (props) {
-  const {sections, currentSection, onChange} = props
+  const {
+    sections, currentSection, searchQuery,
+    onChangeSection, onChangeSearchQuery,
+  } = props
+
+  const searchBar = (
+    <SearchBar
+      key={SEARCH}
+      className={classNames({
+        'NavBar-section-item': true,
+        'NavBar-section-item-selected': currentSection === SEARCH,
+      })}
+      query={searchQuery}
+      onClick={() => onChangeSection(SEARCH)}
+      onChange={onChangeSearchQuery}
+    />
+  )
 
   return (
     <header className='NavBar'>
       <nav className='NavBar-section-list'>
-        <SearchBar
-          className={classNames({
-            'NavBar-section-item': true,
-            'NavBar-section-item-selected': currentSection === 'Search',
-          })}
-          onClick={() => onChange && onChange('Search')}
-        />
-        {sections.map((section, key) => (
-          <button
-            key={key}
-            className={classNames({
-              'NavBar-section-item': true,
-              'NavBar-section-item-selected': section === currentSection,
-            })}
-            onMouseDown={() => onChange && onChange(section)}
-          >
-            {section}
-          </button>
-        ))}
+        {sections.map((section) => {
+          if (section === SEARCH) {
+            return searchBar
+          }
+          return (
+            <button
+              key={section}
+              className={classNames({
+                'NavBar-section-item': true,
+                'NavBar-section-item-selected': section === currentSection,
+              })}
+              onMouseDown={() => onChangeSection(section)}
+            >
+              {section}
+            </button>
+          )
+        })}
       </nav>
       <button className='NavBar-dropdown-button'>
         <span className='NavBar-dropdown-label'>
@@ -45,5 +62,12 @@ export default function NavBar (props) {
 NavBar.propTypes = {
   sections: PropTypes.arrayOf(PropTypes.string).isRequired,
   currentSection: PropTypes.string,
-  onChange: PropTypes.func,
+  searchQuery: PropTypes.string,
+  onChangeSection: PropTypes.func,
+  onChangeSearchQuery: PropTypes.func,
+}
+
+NavBar.defaultProps = {
+  onChangeSection: noop,
+  onChangeSearchQuery: noop,
 }

@@ -4,14 +4,17 @@ import withState from 'recompose/withState'
 
 import './styles.css'
 
+import {SEARCH} from '../NavBar'
 import Browser from '../Browser'
 import Queue from '../Queue'
 import Controls from '../Controls'
 
 function App (props) {
   const {
-    albums, item, section, onChangeItem, onChangeSection,
+    albums, artists, playlists, search,
+    item, section, onChangeItem, onChangeSection,
     displayQueue, setDisplayQueue,
+    track, onChangeTrack,
     queue,
   } = props
 
@@ -23,10 +26,14 @@ function App (props) {
             item={item}
             section={section}
             sections={{
+              [SEARCH]: search,
               Albums: albums,
+              Artists: artists,
+              Playlists: playlists,
             }}
             onChangeItem={onChangeItem}
             onChangeSection={onChangeSection}
+            onChangeTrack={onChangeTrack}
           />
         </div>
         {displayQueue &&
@@ -37,25 +44,33 @@ function App (props) {
             />
           </div>}
       </div>
-      <Controls
-        track={queue[5]}
-        audio={{
-          currentTime: 1000 * 60 * 2,
-          buffered: 1000 * 60 * 3,
-          duration: 1000 * 60 * 4,
-        }}
-        onQueue={() => setDisplayQueue(!displayQueue)}
-      />
+      {track &&
+        <Controls
+          track={track}
+          audio={{
+            currentTime: 1000 * 60 * 2,
+            buffered: 1000 * 60 * 3,
+            duration: 1000 * 60 * 4,
+          }}
+          onQueue={() => setDisplayQueue(!displayQueue)}
+        />}
     </div>
   )
 }
 
 App.propTypes = {
   albums: PropTypes.arrayOf(PropTypes.object).isRequired,
+  artists: PropTypes.arrayOf(PropTypes.object).isRequired,
+  playlists: PropTypes.arrayOf(PropTypes.object).isRequired,
+  search: PropTypes.arrayOf(PropTypes.object).isRequired,
+
   section: PropTypes.string,
   item: PropTypes.shape({}),
   onChangeItem: PropTypes.func,
   onChangeSection: PropTypes.func,
+
+  track: PropTypes.shape({}),
+  onChangeTrack: PropTypes.func,
 
   queue: PropTypes.arrayOf(PropTypes.object),
   displayQueue: PropTypes.bool,
@@ -65,5 +80,6 @@ App.propTypes = {
 export default compose(
   withState('section', 'onChangeSection', 'Albums'),
   withState('item', 'onChangeItem', null),
+  withState('track', 'onChangeTrack', null),
   withState('displayQueue', 'setDisplayQueue', false),
 )(App)

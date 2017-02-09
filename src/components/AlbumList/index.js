@@ -35,7 +35,11 @@ export default function AlbumList (props) {
 }
 
 AlbumList.propTypes = {
-  albums: PropTypes.arrayOf(PropTypes.object).isRequired,
+  albums: PropTypes.arrayOf(PropTypes.object),
   currentlyPlayingTrackId: PropTypes.number,
   onSelectTrack: PropTypes.func,
+}
+
+AlbumList.defaultProps = {
+  albums: [],
 }

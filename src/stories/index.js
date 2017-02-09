@@ -9,9 +9,10 @@ import Wrapper from './Wrapper'
 import App from '../components/App'
 import Browser from '../components/Browser'
 import Controls from '../components/Controls'
-import NavBar from '../components/NavBar'
 import LoginForm from '../components/LoginForm'
+import NavBar, {SEARCH} from '../components/NavBar'
 import Queue from '../components/Queue'
+import SearchResults from '../components/SearchResults'
 import Settings from '../components/Settings'
 import SoundBars from '../components/SoundBars'
 import TypedGrid from '../components/TypedGrid'
@@ -23,10 +24,7 @@ import playlists from '../../data/playlists.json'
 import servers from '../../data/servers.json'
 import libraries from '../../data/libraries.json'
 import tracks from '../../data/tracks.json'
-
-const StatefulNavBar = (
-  withState('currentSection', 'onChange', 'Albums')
-)(NavBar)
+import search from '../../data/search.json'
 
 storiesOf('Icon', module)
   .addDecorator(Wrapper)
@@ -34,9 +32,13 @@ storiesOf('Icon', module)
     <SoundBars />
   ))
 
-storiesOf('Header', module)
+const StatefulNavBar = (
+  withState('currentSection', 'onChangeSection', 'Albums')
+)(NavBar)
+
+storiesOf('NavBar', module)
   .addDecorator(Wrapper)
-  .add('for Albums', () => (
+  .add('default', () => (
     <StatefulNavBar
       sections={['Playlists', 'Artists', 'Albums', 'Tracks']}
       onChange={action('On Change')}
@@ -55,6 +57,16 @@ storiesOf('Grid', module)
     <TypedGrid
       items={artists}
       onChange={action('Select Item')}
+    />
+  ))
+
+storiesOf('SearchResults', module)
+  .addDecorator(Wrapper)
+  .add('default', () => (
+    <SearchResults
+      query='Young'
+      hubs={search}
+      onChange={action('onChange')}
     />
   ))
 
@@ -93,7 +105,8 @@ storiesOf('Panel', module)
 
 const StatefulBrowser = compose(
   withState('section', 'onChangeSection', 'Albums'),
-  withState('item', 'onChangeItem', null)
+  withState('item', 'onChangeItem', null),
+  withState('searchQuery', 'onChangeSearchQuery', 'Young'),
 )(Browser)
 
 storiesOf('Browser', module)
@@ -101,6 +114,7 @@ storiesOf('Browser', module)
   .add('Albums & Artists', () => (
     <StatefulBrowser
       sections={{
+        [SEARCH]: search,
         Albums: albums,
         Artists: artists,
         Playlists: playlists,
@@ -175,6 +189,9 @@ storiesOf('App', module)
   .add('Main', () => (
     <App
       albums={albums}
+      artists={artists}
+      playlists={playlists}
+      search={search}
       queue={playlists[4].tracks}
     />
   ))

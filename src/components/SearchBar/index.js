@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import classNames from 'classnames'
+import noop from 'nop'
 
 import './styles.css'
 
@@ -13,15 +14,16 @@ export default class SearchBar extends Component {
       displayInput: false,
     }
 
-    this.handleClick = this.handleClick.bind(this)
     this.handleBlur = this.handleBlur.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick (event) {
     const {onClick} = this.props
     this.setState({displayInput: true})
     this.input.focus()
-    return onClick && onClick(event)
+    return onClick(event)
   }
 
   handleBlur (event) {
@@ -30,8 +32,14 @@ export default class SearchBar extends Component {
     return true
   }
 
+  handleChange () {
+    const {onChange} = this.props
+    const query = this.input.value
+    return onChange(query)
+  }
+
   render () {
-    const {className} = this.props
+    const {className, query} = this.props
     const {displayInput} = this.state
 
     return (
@@ -50,6 +58,8 @@ export default class SearchBar extends Component {
             className='SearchBar-input'
             placeholder='Search...'
             onBlur={this.handleBlur}
+            onChange={this.handleChange}
+            value={query}
           />
         </div>
       </button>
@@ -59,5 +69,12 @@ export default class SearchBar extends Component {
 
 SearchBar.propTypes = {
   className: PropTypes.string,
+  query: PropTypes.string,
   onClick: PropTypes.func,
+  onChange: PropTypes.func,
+}
+
+SearchBar.defaultProps = {
+  onClick: noop,
+  onChange: noop,
 }

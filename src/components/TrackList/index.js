@@ -32,9 +32,13 @@ export default function TrackList (props) {
 }
 
 TrackList.propTypes = {
-  tracks: PropTypes.arrayOf(PropTypes.object).isRequired,
+  tracks: PropTypes.arrayOf(PropTypes.object),
   preserveTrackIndex: PropTypes.bool,
   currentlyPlayingTrackId: PropTypes.number,
   onSelectTrack: PropTypes.func,
   displayArtist: PropTypes.bool,
+}
+
+TrackList.defaultProps = {
+  tracks: [],
 }

@@ -99,9 +99,9 @@
     webpack-dev-middleware "^1.6.0"
     webpack-hot-middleware "^2.13.2"
 
-"@stayradiated/react-floating-label@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@stayradiated/react-floating-label/-/react-floating-label-1.0.4.tgz#d1ee61479ce19cf4f905942431e67b567aff89bb"
+"@stayradiated/react-floating-label@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@stayradiated/react-floating-label/-/react-floating-label-1.0.5.tgz#0daa21712e1a1c4ced71e64841a774cb4fd52a46"
   dependencies:
     classnames "^2.2.5"
     react "^15.4.2"
@@ -3983,6 +3983,10 @@ node-pre-gyp@^0.6.29:
     semver "~5.3.0"
     tar "~2.2.1"
     tar-pack "~3.3.0"
+
+nop@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/nop/-/nop-1.0.0.tgz#cb46cf7e01574aa6390858149f66897afe53c9ca"
 
 nopt@3.x, nopt@~3.0.6:
   version "3.0.6"
