@@ -13,27 +13,29 @@ export default function TrackListItem (props) {
 
   return (
     <button className='TrackListItem' style={style} onClick={onSelect}>
-      {currentlyPlaying
-        ? <span className='TrackListItem-nowPlayingIcon'>
-          <SoundBars />
+      <div className='TrackListItem-contents'>
+        {currentlyPlaying
+          ? <span className='TrackListItem-nowPlayingIcon'>
+            <SoundBars />
+          </span>
+          : <span className='TrackListItem-index'>
+            {index != null ? index : track.index}
+          </span>}
+        <span className='TrackListItem-fulltitle'>
+          <span className='TrackListItem-title'>{track.title}</span>
+          {displayArtist &&
+            <span className='TrackListItem-artist'>{track.originalTitle}</span>}
         </span>
-        : <span className='TrackListItem-index'>
-          {index != null ? index : track.index}
-        </span>}
-      <span className='TrackListItem-fulltitle'>
-        <span className='TrackListItem-title'>{track.title}</span>
-        {displayArtist &&
-          <span className='TrackListItem-artist'>{track.originalTitle}</span>}
-      </span>
-      <RatingBars
-        className='TrackListItem-rating'
-        value={track.userRating}
-        maxValue={10}
-      />
-      <Time
-        className='TrackListItem-duration'
-        value={track.duration}
-      />
+        <RatingBars
+          className='TrackListItem-rating'
+          value={track.userRating}
+          maxValue={10}
+        />
+        <Time
+          className='TrackListItem-duration'
+          value={track.duration}
+        />
+      </div>
     </button>
   )
 }

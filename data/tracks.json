@@ -49,7 +49,8 @@
     "type": "track",
     "updatedAt": 1486625097,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63673/1486624992/file.mp3"
   },
   {
     "_type": "track",
@@ -86,7 +87,7 @@
     "grandparentTitle": "Tears for Fears",
     "index": 1,
     "key": "/library/metadata/50233",
-    "lastViewedAt": null,
+    "lastViewedAt": 1486644145,
     "originalTitle": "Tears for Fears",
     "parentIndex": 1,
     "parentKey": "/library/metadata/50232",
@@ -100,8 +101,9 @@
     "title": "Shout",
     "type": "track",
     "updatedAt": 1486625069,
-    "userRating": null,
-    "viewCount": null
+    "userRating": 8,
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63665/1486624897/file.mp3"
   },
   {
     "_type": "track",
@@ -138,7 +140,7 @@
     "grandparentTitle": "Tears for Fears",
     "index": 2,
     "key": "/library/metadata/50234",
-    "lastViewedAt": null,
+    "lastViewedAt": 1486644364,
     "originalTitle": "Tears for Fears",
     "parentIndex": 1,
     "parentKey": "/library/metadata/50232",
@@ -153,7 +155,8 @@
     "type": "track",
     "updatedAt": 1486625069,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63666/1486624897/file.mp3"
   },
   {
     "_type": "track",
@@ -190,7 +193,7 @@
     "grandparentTitle": "Tears for Fears",
     "index": 3,
     "key": "/library/metadata/50235",
-    "lastViewedAt": null,
+    "lastViewedAt": 1486644615,
     "originalTitle": "Tears for Fears",
     "parentIndex": 1,
     "parentKey": "/library/metadata/50232",
@@ -204,8 +207,9 @@
     "title": "Everybody Wants to Rule the World",
     "type": "track",
     "updatedAt": 1486625069,
-    "userRating": null,
-    "viewCount": null
+    "userRating": 8,
+    "viewCount": 2,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63667/1486624897/file.mp3"
   },
   {
     "_type": "track",
@@ -242,7 +246,7 @@
     "grandparentTitle": "Tears for Fears",
     "index": 4,
     "key": "/library/metadata/50236",
-    "lastViewedAt": null,
+    "lastViewedAt": 1486644726,
     "originalTitle": "Tears for Fears",
     "parentIndex": 1,
     "parentKey": "/library/metadata/50232",
@@ -257,7 +261,8 @@
     "type": "track",
     "updatedAt": 1486625069,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63668/1486624897/file.mp3"
   },
   {
     "_type": "track",
@@ -294,7 +299,7 @@
     "grandparentTitle": "Tears for Fears",
     "index": 5,
     "key": "/library/metadata/50237",
-    "lastViewedAt": null,
+    "lastViewedAt": 1486645061,
     "originalTitle": "Tears for Fears",
     "parentIndex": 1,
     "parentKey": "/library/metadata/50232",
@@ -309,7 +314,8 @@
     "type": "track",
     "updatedAt": 1486625069,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63669/1486624897/file.mp3"
   },
   {
     "_type": "track",
@@ -361,7 +367,8 @@
     "type": "track",
     "updatedAt": 1486625069,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63670/1486624897/file.mp3"
   },
   {
     "_type": "track",
@@ -413,7 +420,8 @@
     "type": "track",
     "updatedAt": 1486625069,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63671/1486624897/file.mp3"
   },
   {
     "_type": "track",
@@ -465,7 +473,8 @@
     "type": "track",
     "updatedAt": 1486625069,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63672/1486624897/file.mp3"
   },
   {
     "_type": "track",
@@ -502,7 +511,7 @@
     "grandparentTitle": "The Pointer Sisters",
     "index": 1,
     "key": "/library/metadata/50221",
-    "lastViewedAt": null,
+    "lastViewedAt": 1486643309,
     "originalTitle": "The Pointer Sisters",
     "parentIndex": 1,
     "parentKey": "/library/metadata/50220",
@@ -516,8 +525,9 @@
     "title": "Jump (for My Love)",
     "type": "track",
     "updatedAt": 1486625072,
-    "userRating": null,
-    "viewCount": null
+    "userRating": 2,
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63655/1486624900/file.mp3"
   },
   {
     "_type": "track",
@@ -554,7 +564,7 @@
     "grandparentTitle": "The Pointer Sisters",
     "index": 2,
     "key": "/library/metadata/50222",
-    "lastViewedAt": null,
+    "lastViewedAt": 1486643314,
     "originalTitle": "The Pointer Sisters",
     "parentIndex": 1,
     "parentKey": "/library/metadata/50220",
@@ -569,7 +579,8 @@
     "type": "track",
     "updatedAt": 1486625072,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63656/1486624900/file.mp3"
   },
   {
     "_type": "track",
@@ -606,7 +617,7 @@
     "grandparentTitle": "The Pointer Sisters",
     "index": 3,
     "key": "/library/metadata/50223",
-    "lastViewedAt": null,
+    "lastViewedAt": 1486707544,
     "originalTitle": "The Pointer Sisters",
     "parentIndex": 1,
     "parentKey": "/library/metadata/50220",
@@ -620,8 +631,9 @@
     "title": "I'm So Excited",
     "type": "track",
     "updatedAt": 1486625072,
-    "userRating": null,
-    "viewCount": null
+    "userRating": 10,
+    "viewCount": 4,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63657/1486624900/file.mp3"
   },
   {
     "_type": "track",
@@ -658,7 +670,7 @@
     "grandparentTitle": "The Pointer Sisters",
     "index": 4,
     "key": "/library/metadata/50224",
-    "lastViewedAt": null,
+    "lastViewedAt": 1486708323,
     "originalTitle": "The Pointer Sisters",
     "parentIndex": 1,
     "parentKey": "/library/metadata/50220",
@@ -673,7 +685,8 @@
     "type": "track",
     "updatedAt": 1486625072,
     "userRating": null,
-    "viewCount": null
+    "viewCount": 4,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63658/1486624900/file.mp3"
   },
   {
     "_type": "track",
@@ -710,7 +723,7 @@
     "grandparentTitle": "The Pointer Sisters",
     "index": 5,
     "key": "/library/metadata/50225",
-    "lastViewedAt": null,
+    "lastViewedAt": 1486643960,
     "originalTitle": "The Pointer Sisters",
     "parentIndex": 1,
     "parentKey": "/library/metadata/50220",
@@ -724,8 +737,9 @@
     "title": "Neutron Dance",
     "type": "track",
     "updatedAt": 1486625072,
-    "userRating": null,
-    "viewCount": null
+    "userRating": 2,
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63659/1486624900/file.mp3"
   },
   {
     "_type": "track",
@@ -777,7 +791,8 @@
     "type": "track",
     "updatedAt": 1486625072,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63660/1486624900/file.mp3"
   },
   {
     "_type": "track",
@@ -829,7 +844,8 @@
     "type": "track",
     "updatedAt": 1486625072,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63661/1486624900/file.mp3"
   },
   {
     "_type": "track",
@@ -881,7 +897,8 @@
     "type": "track",
     "updatedAt": 1486625072,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63662/1486624900/file.mp3"
   },
   {
     "_type": "track",
@@ -933,7 +950,8 @@
     "type": "track",
     "updatedAt": 1486625072,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63663/1486624900/file.mp3"
   },
   {
     "_type": "track",
@@ -985,7 +1003,8 @@
     "type": "track",
     "updatedAt": 1486625072,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63664/1486624900/file.mp3"
   },
   {
     "_type": "track",
@@ -1022,7 +1041,7 @@
     "grandparentTitle": "Red Hot Chili Peppers",
     "index": 2,
     "key": "/library/metadata/50203",
-    "lastViewedAt": 1486539432,
+    "lastViewedAt": 1486665058,
     "originalTitle": "Red Hot Chili Peppers",
     "parentIndex": 1,
     "parentKey": "/library/metadata/50202",
@@ -1037,7 +1056,8 @@
     "type": "track",
     "updatedAt": 1486526366,
     "userRating": 10,
-    "viewCount": 3
+    "viewCount": 3,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63640/1486526301/file.m4a"
   },
   {
     "_type": "track",
@@ -1089,7 +1109,8 @@
     "type": "track",
     "updatedAt": 1486525420,
     "userRating": 10,
-    "viewCount": 1
+    "viewCount": 1,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63637/1486525187/file.mp3"
   },
   {
     "_type": "track",
@@ -1141,7 +1162,8 @@
     "type": "track",
     "updatedAt": 1486525412,
     "userRating": null,
-    "viewCount": 3
+    "viewCount": 3,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63626/1486525200/file.mp3"
   },
   {
     "_type": "track",
@@ -1193,7 +1215,8 @@
     "type": "track",
     "updatedAt": 1486525412,
     "userRating": null,
-    "viewCount": 3
+    "viewCount": 3,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63627/1486525200/file.mp3"
   },
   {
     "_type": "track",
@@ -1245,7 +1268,8 @@
     "type": "track",
     "updatedAt": 1486525412,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63628/1486525200/file.mp3"
   },
   {
     "_type": "track",
@@ -1297,7 +1321,8 @@
     "type": "track",
     "updatedAt": 1486525412,
     "userRating": null,
-    "viewCount": 1
+    "viewCount": 1,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63629/1486525200/file.mp3"
   },
   {
     "_type": "track",
@@ -1349,7 +1374,8 @@
     "type": "track",
     "updatedAt": 1486525412,
     "userRating": 9,
-    "viewCount": 3
+    "viewCount": 3,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63630/1486525200/file.mp3"
   },
   {
     "_type": "track",
@@ -1401,7 +1427,8 @@
     "type": "track",
     "updatedAt": 1486525412,
     "userRating": null,
-    "viewCount": 1
+    "viewCount": 1,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63631/1486525200/file.mp3"
   },
   {
     "_type": "track",
@@ -1453,7 +1480,8 @@
     "type": "track",
     "updatedAt": 1486525412,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63632/1486525200/file.mp3"
   },
   {
     "_type": "track",
@@ -1505,7 +1533,8 @@
     "type": "track",
     "updatedAt": 1486525412,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63633/1486525200/file.mp3"
   },
   {
     "_type": "track",
@@ -1557,7 +1586,8 @@
     "type": "track",
     "updatedAt": 1486525412,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63634/1486525200/file.mp3"
   },
   {
     "_type": "track",
@@ -1609,7 +1639,8 @@
     "type": "track",
     "updatedAt": 1486525412,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63635/1486525201/file.mp3"
   },
   {
     "_type": "track",
@@ -1661,7 +1692,8 @@
     "type": "track",
     "updatedAt": 1486525412,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63636/1486525201/file.mp3"
   },
   {
     "_type": "track",
@@ -1713,7 +1745,8 @@
     "type": "track",
     "updatedAt": 1486525405,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63615/1486525206/file.mp3"
   },
   {
     "_type": "track",
@@ -1765,7 +1798,8 @@
     "type": "track",
     "updatedAt": 1486525405,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63616/1486525206/file.mp3"
   },
   {
     "_type": "track",
@@ -1817,7 +1851,8 @@
     "type": "track",
     "updatedAt": 1486525405,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63617/1486525206/file.mp3"
   },
   {
     "_type": "track",
@@ -1869,7 +1904,8 @@
     "type": "track",
     "updatedAt": 1486525405,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63618/1486525206/file.mp3"
   },
   {
     "_type": "track",
@@ -1921,7 +1957,8 @@
     "type": "track",
     "updatedAt": 1486525405,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63619/1486525206/file.mp3"
   },
   {
     "_type": "track",
@@ -1973,7 +2010,8 @@
     "type": "track",
     "updatedAt": 1486525405,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63620/1486525206/file.mp3"
   },
   {
     "_type": "track",
@@ -2025,7 +2063,8 @@
     "type": "track",
     "updatedAt": 1486525405,
     "userRating": 10,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63621/1486525206/file.mp3"
   },
   {
     "_type": "track",
@@ -2077,7 +2116,8 @@
     "type": "track",
     "updatedAt": 1486525405,
     "userRating": null,
-    "viewCount": 2
+    "viewCount": 2,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63622/1486525206/file.mp3"
   },
   {
     "_type": "track",
@@ -2129,7 +2169,8 @@
     "type": "track",
     "updatedAt": 1486525405,
     "userRating": 10,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63623/1486525206/file.mp3"
   },
   {
     "_type": "track",
@@ -2181,7 +2222,8 @@
     "type": "track",
     "updatedAt": 1486525405,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63624/1486525206/file.mp3"
   },
   {
     "_type": "track",
@@ -2233,7 +2275,8 @@
     "type": "track",
     "updatedAt": 1486525405,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63625/1486525206/file.mp3"
   },
   {
     "_type": "track",
@@ -2285,7 +2328,8 @@
     "type": "track",
     "updatedAt": 1486525407,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63601/1486525210/file.mp3"
   },
   {
     "_type": "track",
@@ -2337,7 +2381,8 @@
     "type": "track",
     "updatedAt": 1486525407,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63602/1486525210/file.mp3"
   },
   {
     "_type": "track",
@@ -2389,7 +2434,8 @@
     "type": "track",
     "updatedAt": 1486525407,
     "userRating": 8,
-    "viewCount": 2
+    "viewCount": 2,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63603/1486525210/file.mp3"
   },
   {
     "_type": "track",
@@ -2441,7 +2487,8 @@
     "type": "track",
     "updatedAt": 1486525407,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63604/1486525210/file.mp3"
   },
   {
     "_type": "track",
@@ -2493,7 +2540,8 @@
     "type": "track",
     "updatedAt": 1486525408,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63605/1486525210/file.mp3"
   },
   {
     "_type": "track",
@@ -2545,7 +2593,8 @@
     "type": "track",
     "updatedAt": 1486525408,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63606/1486525210/file.mp3"
   },
   {
     "_type": "track",
@@ -2597,6 +2646,7 @@
     "type": "track",
     "updatedAt": 1486525408,
     "userRating": null,
-    "viewCount": null
+    "viewCount": null,
+    "mediaPath": "http://192.168.1.100:32400/library/parts/63607/1486525210/file.mp3"
   }
 ]

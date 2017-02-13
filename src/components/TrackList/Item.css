@@ -1,7 +1,4 @@
 .TrackListItem {
-  display: flex;
-  align-items: center;
-  list-style-type: none;
   padding: 0 1em;
   box-sizing: border-box;
   border-bottom: 1px solid var(--white-05);
@@ -10,6 +7,11 @@
 
 .TrackListItem:hover {
   background: var(--white-05);
+}
+
+.TrackListItem-contents {
+  display: flex;
+  align-items: center;
 }
 
 .TrackListItem-index {

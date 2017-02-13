@@ -1,5 +1,8 @@
 .SearchBar {
   flex: 1;
+}
+
+.SearchBar-contents {
   display: flex;
   align-items: stretch;
 }

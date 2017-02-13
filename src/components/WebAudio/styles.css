@@ -1,0 +1,10 @@
+.WebAudio {
+  flex: 1;
+  display: flex;
+  padding: 2em;
+}
+
+.WebAudio-wave {
+  flex: 1;
+  display: flex;
+}

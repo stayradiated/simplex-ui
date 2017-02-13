@@ -47,20 +47,22 @@ export default class SearchBar extends Component {
         className={classNames(className, 'SearchBar')}
         onClick={this.handleClick}
       >
-        <Icon className='SearchBar-icon' icon='search' />
-        <div
-          className={classNames('SearchBar-inputWrapper', {
-            'SearchBar-inputWrapper_closed': !displayInput,
-          })}
-        >
-          <input
-            ref={(el) => { this.input = el }}
-            className='SearchBar-input'
-            placeholder='Search...'
-            onBlur={this.handleBlur}
-            onChange={this.handleChange}
-            value={query}
-          />
+        <div className='SearchBar-contents'>
+          <Icon className='SearchBar-icon' icon='search' />
+          <div
+            className={classNames('SearchBar-inputWrapper', {
+              'SearchBar-inputWrapper_closed': !displayInput,
+            })}
+          >
+            <input
+              ref={(el) => { this.input = el }}
+              className='SearchBar-input'
+              placeholder='Search...'
+              onBlur={this.handleBlur}
+              onChange={this.handleChange}
+              value={query}
+            />
+          </div>
         </div>
       </button>
     )

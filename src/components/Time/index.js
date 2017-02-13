@@ -3,11 +3,11 @@ import moment from 'moment'
 import 'moment-duration-format'
 
 export default function Time (props) {
-  const {value, format, ...otherProps} = props
+  const {value, unit, format, ...otherProps} = props
 
   return (
     <span {...otherProps}>
-      {moment.duration(value, 'ms').format(format)}
+      {moment.duration(value, unit).format(format)}
     </span>
   )
 }
@@ -15,8 +15,10 @@ export default function Time (props) {
 Time.propTypes = {
   format: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
+  unit: PropTypes.string.isRequired,
 }
 
 Time.defaultProps = {
   format: 'm:ss',
+  unit: 'ms',
 }

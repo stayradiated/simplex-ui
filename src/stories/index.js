@@ -17,6 +17,7 @@ import Settings from '../components/Settings'
 import SoundBars from '../components/SoundBars'
 import TypedGrid from '../components/TypedGrid'
 import TypedPanel from '../components/TypedPanel'
+import WebAudio from '../components/WebAudio'
 
 import albums from '../../data/albums.json'
 import artists from '../../data/artists.json'
@@ -195,3 +196,18 @@ storiesOf('App', module)
       queue={playlists[4].tracks}
     />
   ))
+
+storiesOf('WebAudio', module)
+  .addDecorator(Wrapper)
+  .add('Web Audio', () => {
+    const tracklist = playlists[4].tracks
+    const track = tracklist[Math.floor(Math.random() * tracklist.length)]
+
+    return (
+      <WebAudio
+        src={track.mediaPath}
+        duration={track.duration / 1000}
+        barCount={300}
+      />
+    )
+  })
