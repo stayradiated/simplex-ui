@@ -175,9 +175,9 @@ storiesOf('Controls', module)
     <StatefulControls
       track={tracks[49]}
       audio={{
-        currentTime: 1000 * 60 * 2,
-        buffered: 1000 * 60 * 3,
-        duration: 1000 * 60 * 4,
+        currentTime: 60 * 2,
+        buffered: 60 * 3,
+        duration: 60 * 4,
       }}
       onPrev={action('Prev')}
       onNext={action('Next')}
@@ -200,14 +200,29 @@ storiesOf('App', module)
 storiesOf('WebAudio', module)
   .addDecorator(Wrapper)
   .add('Web Audio', () => {
-    const tracklist = playlists[4].tracks
-    const track = tracklist[Math.floor(Math.random() * tracklist.length)]
+    const track = tracks[49]
 
     return (
       <WebAudio
-        src={track.mediaPath}
+        source={track.mediaPath}
         duration={track.duration / 1000}
-        barCount={300}
-      />
+      >
+        {({currentTime, buffered, duration, paused, onPause, onPlay}) => (
+          <Controls
+            track={track}
+            audio={{
+              currentTime,
+              buffered,
+              duration,
+            }}
+            paused={paused}
+            onPause={onPause}
+            onPlay={onPlay}
+            onPrev={action('Prev')}
+            onNext={action('Next')}
+            onQueue={action('Queue')}
+          />
+        )}
+      </WebAudio>
     )
   })

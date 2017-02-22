@@ -10,7 +10,7 @@ export default function Timeline (props) {
   return (
     <div className='Timeline'>
       <div className='Timeline-timestamp Timeline-currentTime'>
-        <Time value={currentTime} />
+        <Time value={currentTime} unit='s' trim={false} />
       </div>
       <div className='Timeline-track'>
         <div
@@ -23,7 +23,7 @@ export default function Timeline (props) {
         />
       </div>
       <div className='Timeline-timestamp Timeline-duration'>
-        <Time value={duration} />
+        <Time value={duration} unit='s' trim={false} />
       </div>
     </div>
   )
